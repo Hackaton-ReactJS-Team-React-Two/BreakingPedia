@@ -6,18 +6,19 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hackaton <code>React.js</code> 2020 'React-Team-Two'.
-        </p>
+        <h1 className="display-2">
+          Hackaton <code className="App-link">React.js</code> 2020{" "}
+        </h1>
+        <p className="display-4">'React-Team-Two'</p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/Hackaton-ReactJS-Team-React-Two/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Building "BreakingPedia" . . .
         </a>
+        <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
   );
