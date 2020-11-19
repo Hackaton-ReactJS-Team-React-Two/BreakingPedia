@@ -1,0 +1,67 @@
+.CharacterCard {
+  display: block;
+  max-width: 200px;
+  position: relative;
+  transition-duration: 1s;
+  margin: 10px;
+}
+
+.CharacterCard:hover {
+  transform: scale(1.2);
+}
+
+.CharacterCard:hover .CharacterCard__container {
+  background-color: transparent;
+}
+
+.CharacterCard:hover .CharacterCard__quote {
+  color: #FFF;
+}
+
+.CharacterCard__image {
+  width: 100%;
+}
+
+.CharacterCard__favorite {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: none;
+}
+
+.CharacterCard__favorite.true {
+  display: initial;
+}
+
+.CharacterCard__container {
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 1s;
+}
+
+.CharacterCard__container.green {
+  background-color: rgba(3, 43, 21, .87);
+}
+
+.CharacterCard__container.yellow {
+  background-color: rgba(69, 73, 2, .87);
+}
+
+.CharacterCard__name {
+  width: 50%;
+}
+
+.CharacterCard__quote {
+  color: transparent;
+  transition-duration: 1s;
+}

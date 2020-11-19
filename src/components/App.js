@@ -1,8 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import "bootstrap/dist/css/bootstrap.css";
-
 import Build from '../pages/Build'
 import Home from '../pages/Home'
 import CharacterDetails from '../pages/CharacterDetails'
@@ -18,7 +16,7 @@ function App() {
         <Route exact path="/" component={Home}/>
         <Route exact path="/contact_us" component={ContactUs}/>
         <Route exact path="/my_space" component={MySpace}/>
-        <Route exact path="/character/:name" component={CharacterDetails}/>
+        <Route exact path="/character/:id" component={CharacterDetails}/>
       </Switch>
     </BrowserRouter>
   )
