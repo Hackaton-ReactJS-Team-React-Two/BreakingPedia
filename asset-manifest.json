@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/BreakingPedia/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/BreakingPedia/static/js/main.6c364883.chunk.js",
-    "main.js.map": "/BreakingPedia/static/js/main.6c364883.chunk.js.map",
-    "runtime-main.js": "/BreakingPedia/static/js/runtime-main.237b4cef.js",
-    "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.237b4cef.js.map",
+    "main.css": "/BreakingPedia/static/css/main.9572e92c.chunk.css",
+    "main.js": "/BreakingPedia/static/js/main.bd29eed4.chunk.js",
+    "main.js.map": "/BreakingPedia/static/js/main.bd29eed4.chunk.js.map",
+    "runtime-main.js": "/BreakingPedia/static/js/runtime-main.6c3293d8.js",
+    "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.6c3293d8.js.map",
     "static/css/2.43b2b750.chunk.css": "/BreakingPedia/static/css/2.43b2b750.chunk.css",
-    "static/js/2.b5340773.chunk.js": "/BreakingPedia/static/js/2.b5340773.chunk.js",
-    "static/js/2.b5340773.chunk.js.map": "/BreakingPedia/static/js/2.b5340773.chunk.js.map",
-    "static/js/3.1f7405df.chunk.js": "/BreakingPedia/static/js/3.1f7405df.chunk.js",
-    "static/js/3.1f7405df.chunk.js.map": "/BreakingPedia/static/js/3.1f7405df.chunk.js.map",
+    "static/js/2.67f8b9c4.chunk.js": "/BreakingPedia/static/js/2.67f8b9c4.chunk.js",
+    "static/js/2.67f8b9c4.chunk.js.map": "/BreakingPedia/static/js/2.67f8b9c4.chunk.js.map",
+    "static/js/3.7abed79f.chunk.js": "/BreakingPedia/static/js/3.7abed79f.chunk.js",
+    "static/js/3.7abed79f.chunk.js.map": "/BreakingPedia/static/js/3.7abed79f.chunk.js.map",
     "index.html": "/BreakingPedia/index.html",
     "static/css/2.43b2b750.chunk.css.map": "/BreakingPedia/static/css/2.43b2b750.chunk.css.map",
-    "static/css/main.8c8b27cf.chunk.css.map": "/BreakingPedia/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.b5340773.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.b5340773.chunk.js.LICENSE.txt",
+    "static/css/main.9572e92c.chunk.css.map": "/BreakingPedia/static/css/main.9572e92c.chunk.css.map",
+    "static/js/2.67f8b9c4.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.67f8b9c4.chunk.js.LICENSE.txt",
     "static/media/logo.103b5fa1.svg": "/BreakingPedia/static/media/logo.103b5fa1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.237b4cef.js",
+    "static/js/runtime-main.6c3293d8.js",
     "static/css/2.43b2b750.chunk.css",
-    "static/js/2.b5340773.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.6c364883.chunk.js"
+    "static/js/2.67f8b9c4.chunk.js",
+    "static/css/main.9572e92c.chunk.css",
+    "static/js/main.bd29eed4.chunk.js"
   ]
 }
