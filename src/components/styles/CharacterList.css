@@ -1,0 +1,6 @@
+.characterList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,200px);
+  grid-gap: 40px;
+  justify-content: center;
+}

@@ -1,9 +1,9 @@
 .CharacterCard {
   display: block;
-  max-width: 200px;
   position: relative;
+  max-width: 200px;
   transition-duration: 1s;
-  margin: 10px;
+  padding: 0;
 }
 
 .CharacterCard:hover {
@@ -12,10 +12,6 @@
 
 .CharacterCard:hover .CharacterCard__container {
   background-color: transparent;
-}
-
-.CharacterCard:hover .CharacterCard__quote {
-  color: #FFF;
 }
 
 .CharacterCard__image {
@@ -42,7 +38,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  color: white;
+  color: #FFFF22;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -59,9 +55,5 @@
 
 .CharacterCard__name {
   width: 50%;
-}
-
-.CharacterCard__quote {
-  color: transparent;
-  transition-duration: 1s;
+  font-size: 1rem;
 }
