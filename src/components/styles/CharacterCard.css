@@ -57,3 +57,9 @@
   width: 50%;
   font-size: 1rem;
 }
+
+@media screen and (max-width:500px) {
+  .CharacterCard__name {
+    font-size: .7rem;
+  }
+}

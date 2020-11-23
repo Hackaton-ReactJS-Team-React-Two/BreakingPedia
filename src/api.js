@@ -4,13 +4,19 @@ export const getCharacters = async (page,numPerPage) => {
   const limit = `limit=${numPerPage}`
   const initialIndex = `offset=${(page-1)*numPerPage}`
   const params = `?${limit}&${initialIndex}`
-  const response = await fetchData(`${BaseUrl}characters`,params)
+  const response = await fetchData(`characters`,params)
   return response
 }
 
-export const getQuoteByName = async name => {
+export const getQuoteByName = async (name,random = false) => {
   const splitName = name.split(" ")
+  let url = ""
   let params = "?author="
+  if(random) {
+    url = "quote/random"
+  } else {
+    url = "quote"
+  }
   splitName.forEach((name,id) => {
     if(id < (splitName.length - 1)) {
       params+=`${name}+`
@@ -18,22 +24,17 @@ export const getQuoteByName = async name => {
       params+=`${name}`
     }
   });
-  const response = await fetchData(`${BaseUrl}quote`,params)
+  const response = await fetchData(url,params)
   return response
 }
 
 export const getRandomQuote = async () => {
-  const response = await fetchData(`${BaseUrl}quote/random`)
+  const response = await fetchData(`quote/random`)
   return response
 }
 
 async function fetchData (url, params="") {
-  const response = await fetch(`${url}${params}`)
-  console.log(response);
+  const response = await fetch(`${BaseUrl}${url}${params}`)
   const data = await response.json()
-  if(data.length > 0) {
-    return data
-  } else {
-    throw new Error("no data was found")
-  }
+  return data
 }

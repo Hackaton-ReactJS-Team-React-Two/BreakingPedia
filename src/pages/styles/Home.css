@@ -1,0 +1,37 @@
+.HeroHome {
+  position: relative;
+  overflow: hidden;
+  max-height: 640px;
+}
+
+.HeroHome__image {
+  width: 100%;
+}
+
+.HeroHome__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HeroHome__content a {
+  width: min-content;
+}
+
+.HeroHome__quote {
+  color: #CCC;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.HerHome__quote-message {
+  font-size: 2rem;
+}
