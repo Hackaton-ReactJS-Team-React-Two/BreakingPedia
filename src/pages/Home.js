@@ -76,6 +76,7 @@ function Home() {
         </div>
       </div>
       <main id="main-home">
+        <SearchInput />
         <CharacterList characters={characters} />
         <button
           onClick={() => {
