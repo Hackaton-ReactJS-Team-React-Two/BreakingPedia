@@ -76,6 +76,7 @@ function Home() {
         </div>
       </div>
       <main id="main-home">
+        <h3 className="search__tittle my-3">Buscar</h3>
         <SearchInput />
         <CharacterList characters={characters} />
         <button

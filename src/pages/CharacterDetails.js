@@ -1,8 +1,10 @@
 import React from 'react'
 
+import CharacterDetail from '../components/CharacterDetail'
+
 function CharacterDetails() {
   return (
-    <h1>Character details</h1>
+    <CharacterDetail/>
   )
 }
 
