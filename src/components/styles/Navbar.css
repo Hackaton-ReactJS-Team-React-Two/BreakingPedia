@@ -1,0 +1,39 @@
+img{
+    width: 100px;
+    margin-left: 40px;
+    margin-right: 750px;
+}
+
+.navbar{
+    background-color: #161b18 !important;
+}
+
+.link_name{
+    padding: 10px;
+    color: #ffffff !important;
+}
+
+text_padding{
+    padding: 10px;
+}
+
+@media screen and (min-width:480px){
+    img{
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (min-width:768px){
+    img{
+        margin-left: 40px;
+        margin-right: 450px;
+    }
+}
+
+@media screen and (min-width:1020px){
+    img{
+        margin-left: 40px;
+        margin-right: 750px;
+    }
+}

@@ -1,7 +1,6 @@
 import logo from "../images/logo.svg";
 import "./styles/Build.css";
 
-
 function Build() {
   return (
     <div className="Build">
