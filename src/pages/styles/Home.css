@@ -35,3 +35,8 @@
 .HerHome__quote-message {
   font-size: 2rem;
 }
+
+.search__title {
+  text-align: center;
+  color: #FF2;
+}
