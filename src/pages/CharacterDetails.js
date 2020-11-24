@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import CharacterDetail from '../components/CharacterDetail'
+import CharacterDetail from "../components/CharacterDetail";
+import Comment from "../components/Comment";
 
 function CharacterDetails() {
   return (
-    <CharacterDetail/>
-  )
+    <div>
+      <CharacterDetail />
+
+      <Comment />
+    </div>
+  );
 }
 
-export default CharacterDetails
+export default CharacterDetails;
