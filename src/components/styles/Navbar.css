@@ -1,39 +1,30 @@
-img{
-    width: 100px;
-    margin-left: 40px;
-    margin-right: 750px;
-}
-
 .navbar{
     background-color: #161b18 !important;
 }
 
+.nav__logo{
+    width: 110px;
+}
+
 .link_name{
-    padding: 10px;
+    padding: 10px 12px;
     color: #ffffff !important;
 }
 
-text_padding{
-    padding: 10px;
-}
-
 @media screen and (min-width:480px){
-    img{
+    .nav__logo{
         margin-left: 10px;
-        margin-right: 5px;
     }
 }
 
 @media screen and (min-width:768px){
-    img{
+    .nav__logo{
         margin-left: 40px;
-        margin-right: 450px;
     }
 }
 
-@media screen and (min-width:1020px){
-    img{
-        margin-left: 40px;
-        margin-right: 750px;
+@media screen and (min-width:1024px){
+    .nav__logo{
+        margin-right: 550px;
     }
 }

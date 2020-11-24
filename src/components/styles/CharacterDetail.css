@@ -1,4 +1,4 @@
-body{
+.body{
     background-color: #292d00;
     color: #ffffff;
 }
@@ -9,7 +9,12 @@ body{
     margin: 10px 20px;
 }
 
+.card-body{
+    width: auto;
+}
+
 .card-title{
+    margin: 5px 0px;
     text-align: center;
 }
 
@@ -35,14 +40,14 @@ body{
 .topics{
     margin: 10px 30px;
     display: inline-block;
-    width: 350px;
+    width: 330px;
     border: 1px solid #ffffff;
     border-radius: 10px;
 }
 
 .body__topics{
     width: min-content;
-    margin: 0px 20px;
+    margin: 0px 30px;
 }
 
 .row__topic{
@@ -88,9 +93,9 @@ body{
     }
 }
 
-@media screen and (min-width:1020px){
+@media screen and (min-width:1024px){
     .topics{
-        margin: 10px 30px;
+        margin: 10px 20px;
     }
     .logo{
         margin: 30px 10px;

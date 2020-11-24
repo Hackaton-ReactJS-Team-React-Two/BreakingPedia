@@ -6,11 +6,11 @@ import birthday from "../images/birthday-card.png";
 import status from "../images/me-gusta.png";
 import "./styles/CharacterDetail.css";
 
-function CharacterDetail(props) {
+function CharacterDetail() {
   return (
     <div className="card mb-3 detail">
       <div className="row no-gutters">
-        <div className="col-md-4">
+        <div className="col-md-4 cont-img">
           <img src={picture} className="card-img" alt="Character" />
         </div>
         <div className="col-md-8">
