@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { getQuoteByName } from "../api";
 
 import CharacterDetail from "../components/CharacterDetail";
 import Comment from "../components/Comment";
+import Quote from "../components/Quote";
 
 function CharacterDetails() {
   const [character, setCharacter] = useState([]);
   const [quotes, setQuotes] = useState(null);
   const [error, setError] = useState(null);
   const [load, setLoad] = useState(false);
-  const [count, setCount] = useState(1);
-  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     setLoad(true);
     setError(null);
     async function fetchData() {
       try {
-        const quotes = await getQuoteByName();
-        setQuotes(quotes);
+        const data = await getQuoteByName("Walter White");
+        setQuotes(data);
         setLoad(false);
       } catch (error) {
         setLoad(false);
@@ -27,11 +26,16 @@ function CharacterDetails() {
     }
     fetchData();
   }, []);
+
+  if (load) {
+    return <h1>Loading</h1>;
+  }
+
   return (
     <div>
       <CharacterDetail />
-
       <Comment />
+      {quotes != null ? <Quote quotes={quotes} /> : ""}
     </div>
   );
 }
