@@ -16,7 +16,7 @@ function FooterComp(props) {
       <div className="footer">
         <div className="row">
           <div className="col-sm">
-            <img src={logo} className="img_logo" />
+            <img src={logo} className="img_logo" alt="Logo" />
           </div>
           <div className="col-sm">
             <ul>
