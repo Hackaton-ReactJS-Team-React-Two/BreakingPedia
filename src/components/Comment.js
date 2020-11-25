@@ -6,9 +6,9 @@ function Comment() {
   return (
     <div>
       <input type="text" className="form-control mb-3" placeholder="Comment" />
-      <div className="card detail__Comment mb-3">
-        <div className="card-header">
-          Fecha de la publicacion ( 24-11-2020 )
+      <div className="card detail__Comment text-muted">
+        <div className="card-header text-secondary">
+          Post date ( 24-11-2020 )
         </div>
         <div className="card-body">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur

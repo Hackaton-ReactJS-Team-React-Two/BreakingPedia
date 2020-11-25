@@ -34,8 +34,15 @@ function CharacterDetails() {
   return (
     <div>
       <CharacterDetail />
-      <Comment />
-      {quotes != null ? <Quote quotes={quotes} /> : ""}
+
+      <div className="row">
+        <div className="col-6">
+          <Comment />
+        </div>
+        <div className="col-6">
+          {quotes != null ? <Quote quotes={quotes} /> : ""}
+        </div>
+      </div>
     </div>
   );
 }
