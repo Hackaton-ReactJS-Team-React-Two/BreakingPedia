@@ -6,6 +6,8 @@ import "./styles/Home.css";
 
 import CharacterList from "../components/CharacterList";
 import SearchInput from "../components/SearchInput";
+import PageLoading from "../components/PageLoading"
+import MiniLoader from "../components/MiniLoader"
 
 function Home() {
   const [characters, setCharacters] = useState([]);
@@ -22,7 +24,6 @@ function Home() {
       try {
         const quote = await getRandomQuote();
         setQuote(quote);
-        console.log(quote);
         setLoad(false);
       } catch (error) {
         setLoad(false);
@@ -53,7 +54,7 @@ function Home() {
     return <h1>{error.message}</h1>;
   }
   if (load && characters.length === 0) {
-    return <h1>Loading</h1>;
+    return <PageLoading/>;
   }
   return (
     <Fragment>
@@ -76,19 +77,22 @@ function Home() {
         </div>
       </div>
       <main id="main-home">
-        <h3 className="search__tittle my-3">Buscar</h3>
+        <h3 className="search__title my-3">Buscar</h3>
         <SearchInput />
-        <CharacterList characters={characters} />
-        <button
-          onClick={() => {
-            setCount(count + 1);
-          }}
-          className={`${
-            visible ? "d-block" : "d-none"
-          } btn btn-dark mx-auto my-5`}
-        >
-          Load more
-        </button>
+        <div className=" mt-4 mb-5">
+          <CharacterList characters={characters} />
+          {load && characters?<MiniLoader/>: ""}
+          <button
+            onClick={() => {
+              setCount(count + 1);
+            }}
+            className={`${
+              visible ? "d-block" : "d-none"
+            } btn btn-dark mx-auto mt-5`}
+          >
+            Load more
+          </button>
+        </div>
       </main>
     </Fragment>
   );

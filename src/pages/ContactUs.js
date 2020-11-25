@@ -1,9 +1,8 @@
 import React from 'react'
+import AboutUs from "../components/AboutUs";
 
 function ContactUs() {
-  return (
-    <h1>Contact us</h1>
-  )
+  return <AboutUs />;
 }
 
 export default ContactUs
