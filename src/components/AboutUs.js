@@ -20,9 +20,9 @@ function AboutUs(props) {
         </p>
       </div>
       <div className="About__footer">
-        <img className="About__social" src={github} />
-        <img className="About__social" src={facebook} />
-        <img className="About__social" src={linkedin} />
+        <img className="About__social" src={github} alt="Logo Github" />
+        <img className="About__social" src={facebook} alt="Logo facebook" />
+        <img className="About__social" src={linkedin} alt="Logo Linkedin" />
       </div>
     </div>
   );
