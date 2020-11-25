@@ -19,7 +19,6 @@ function CharacterList(props) {
             <CharacterCard
               character={character}
               color={color}
-              favorite={false}
               key={id}
             />
           );

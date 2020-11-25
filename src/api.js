@@ -5,6 +5,15 @@ export const getCharacters = async (page,numPerPage) => {
   const initialIndex = `offset=${(page-1)*numPerPage}`
   const params = `?${limit}&${initialIndex}`
   const response = await fetchData(`characters`,params)
+  response.forEach(async character => {
+    character.favorite = false
+  })
+  return response
+}
+
+export const getCharacterById = async (id) => {
+  const response = await fetchData(`characters/${id}`)
+  response.favorite = false
   return response
 }
 

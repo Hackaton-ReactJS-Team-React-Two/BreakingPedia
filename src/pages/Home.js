@@ -1,5 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { getCharacters, getRandomQuote } from "../api";
+import { connect } from 'react-redux'
+
+import * as charactersActions from '../actions/charactersActions'
 
 import BannerHome from "../images/BannerHome.jpg";
 import "./styles/Home.css";
@@ -9,8 +12,7 @@ import SearchInput from "../components/SearchInput";
 import PageLoading from "../components/PageLoading"
 import MiniLoader from "../components/MiniLoader"
 
-function Home() {
-  const [characters, setCharacters] = useState([]);
+function Home(props) {
   const [quote, setQuote] = useState(null);
   const [error, setError] = useState(null);
   const [load, setLoad] = useState(false);
@@ -33,27 +35,21 @@ function Home() {
     fetchData();
   }, []);
   useEffect(() => {
-    setLoad(true);
-    setError(null);
-    async function fetchData() {
-      try {
-        const data = await getCharacters(count, 8);
-        setCharacters(characters.concat(data));
-        if (characters.length + data.length === 63) {
-          setVisible(false);
-        }
-        setLoad(false);
-      } catch (error) {
-        setLoad(false);
-        setError(error);
+    async function fetchData(){
+      await props.GetAll(count)
+      if(props.characters.length === 63) {
+        setVisible(false)
       }
     }
-    fetchData();
+    fetchData()
   }, [count]);
-  if (error) {
+  if (props.error) {
+    return <h1>{props.error.message}</h1>;
+  }
+  if(error) {
     return <h1>{error.message}</h1>;
   }
-  if (load && characters.length === 0) {
+  if ((load || props.load) && props.characters.length  === 0) {
     return <PageLoading/>;
   }
   return (
@@ -80,8 +76,8 @@ function Home() {
         <h3 className="search__title my-3">Buscar</h3>
         <SearchInput />
         <div className=" mt-4 mb-5">
-          <CharacterList characters={characters} />
-          {load && characters?<MiniLoader/>: ""}
+          <CharacterList characters={props.characters} />
+          {props.load && props.characters?<MiniLoader/>: ""}
           <button
             onClick={() => {
               setCount(count + 1);
@@ -98,4 +94,8 @@ function Home() {
   );
 }
 
-export default Home;
+const mapStateToProps = (reducers) => {
+  return reducers.charactersReducer
+}
+
+export default connect(mapStateToProps, charactersActions)(Home);
