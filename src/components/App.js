@@ -6,20 +6,22 @@ import Home from '../pages/Home'
 import CharacterDetails from '../pages/CharacterDetails'
 import ContactUs from '../pages/ContactUs'
 import MySpace from '../pages/MySpace'
-
+import Layout from "../components/Layout";
 
 function App() {
-  return(
+  return  (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/BreakingPedia" component={Build}/>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/contact_us" component={ContactUs}/>
-        <Route exact path="/my_space" component={MySpace}/>
-        <Route exact path="/character/:id" component={CharacterDetails}/>
-      </Switch>
+      <Layout>
+          <Switch>
+            <Route exact path="/BreakingPedia" component={Build}  />
+            <Route exact path="/" component={Home}  />
+            <Route exact path="/contact_us" component={ContactUs}  />
+            <Route exact path="/my_space" component={MySpace}  />
+            <Route exact path="/character/:id" component={CharacterDetails}  />
+          </Switch>
+      </Layout>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App

@@ -1,0 +1,30 @@
+.navbar{
+    background-color: #161b18 !important;
+}
+
+.nav__logo{
+    width: 110px;
+}
+
+.link_name{
+    padding: 10px 12px;
+    color: #ffffff !important;
+}
+
+@media screen and (min-width:480px){
+    .nav__logo{
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width:768px){
+    .nav__logo{
+        margin-left: 40px;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .nav__logo{
+        margin-right: 550px;
+    }
+}

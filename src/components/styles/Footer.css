@@ -1,0 +1,131 @@
+.footer{
+    background-color: #161b18 !important;
+}
+
+.img_logo{
+    width: 150px;
+}
+
+.footer__li{
+    list-style: none;
+    color: antiquewhite;
+}
+
+.form{
+    margin-top: 26px;
+}
+
+.footer__h6{
+    font-weight: 400;
+}
+
+.img_social{
+    width: 18px;
+    filter: invert(100%);
+}
+
+.link_name{
+    color: #ffffff !important;
+}
+
+.button_subscribe{
+    background-color: #042c19;
+    border-color: #041307;
+}
+
+.button_subscribe:hover{
+    background-color: #bf7504;
+    border-color: #724304;
+}
+
+.quote{
+    text-align: justify;
+    color: antiquewhite;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.copyright{
+    text-align: center;
+    color: antiquewhite;
+}
+
+@media screen and (min-width:500px){
+    .img_logo{
+        margin: 20px 150px;
+    }
+    .footer_ul{
+        margin: -10px;
+    }
+    .footer__li{
+        margin: -5px 0px;
+        margin-left: -20px;
+        text-align: center;
+    }
+    .footer__h6{
+        text-align: center;
+        margin-left: 15px;
+    }
+    .button_subscribe{
+        margin: 10px 190px;
+    }
+    .img_social{
+        margin: 10px 35px;
+    }
+    .quote{
+        margin: 15px;
+    }
+
+}
+
+@media screen and (min-width:767px){
+    .img_logo{
+        margin-top: 60px;
+    }
+    .footer__h6{
+        text-align: center;
+    }
+    .content__form{
+        margin-left: 110px;
+    }
+    .img_social{
+        margin: 15px 42px;
+    }
+}
+
+@media screen and (min-width:990px){
+    .button_subscribe{
+        margin-top: 10px;
+    }
+    .img_social{
+        margin: 15px 10px;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .img_logo{
+        margin-left: 60px;
+        margin-top: 30px;
+    }
+    .footer_ul{
+        margin-top: 8px;
+        margin-left: -30px;
+        margin-bottom: 0px;
+    }
+    .footer__h6{
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .content__form{
+        margin: 10px;
+    }
+    .button_subscribe{
+        margin: 10px 0px;
+    }
+    .img_social{
+        margin: 0px 13px;
+    }
+    .quote{
+        margin: 15px;
+    }
+}
