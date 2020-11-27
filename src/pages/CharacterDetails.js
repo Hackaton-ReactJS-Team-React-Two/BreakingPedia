@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { getQuoteByName } from "../api";
 
 import CharacterDetail from "../components/CharacterDetail";
+import PageLoading from "../components/PageLoading";
 import Comment from "../components/Comment";
 import Quote from "../components/Quote";
+
 
 function CharacterDetails() {
   const [character, setCharacter] = useState([]);
@@ -28,7 +30,7 @@ function CharacterDetails() {
   }, []);
 
   if (load) {
-    return <h1>Loading</h1>;
+    return <PageLoading />;
   }
 
   return (

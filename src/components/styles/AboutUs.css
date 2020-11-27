@@ -1,8 +1,10 @@
+.about__container{
+    display: inline-flex;
+}
 .About{
-
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     height: min-content;
-    width: 250px;
+    width: fit-content;
     border: 5px solid;
     border-color: #161b18;
     border-radius: 10px;
@@ -21,12 +23,15 @@
     border-radius: 50%;
 }
 
-h3, h5{
+.titles{
+    color: antiquewhite;
     text-align: center;
     margin: 5px;
 }
 
-p{
+.description{
+    width: 180px;
+    color: antiquewhite;
     text-align: justify;
     margin: 10px 25px;
 }
