@@ -1,67 +1,59 @@
-import { getCharacters } from "../api";
+import { getCharacters, getCharacterById } from "../api";
+import commentsReducer from "../reducers/commentsReducer";
+import quotesReducer from "../reducers/quotesReducer";
+import {
+	LOADING,
+	ERROR,
+  GET_ALL,
+  INCREMENT_COUNT,
+  GET_BY_ID
+} from '../types/charactersTypes';
 
-export const GetAll = (count) => async (dispatch, getState) => {
+export const getAll = (count) => async (dispatch, getState) => {
   dispatch({
-    type: "loading",
-    payload: true
+    type: LOADING
+  })
+  dispatch({
+    type: INCREMENT_COUNT,
+    payload: count
   })
   const { characters } = getState().charactersReducer
-  if(characters.length) {
-    let data = null
-    let l = 0
-    let length = 0
-    if(count*8 >= 63) {
-      length = 63
-    } else {
-      length = count*8
-    }
-    for (let i = (count-1)*8; i < length; i++) {
-      if(i%8 === 0) {
-        l = 0
-      }
-      if(!characters[i] || characters[i].char_id != i+1) {
-        if(data === null) {
-          try {
-            data = await getCharacters(count,8)
-          } catch (error) {
-            dispatch({
-              type: "error",
-              payload: error
-            })
-          }
-        }
-        characters.splice(i,0,data[l])
-      }
-      l++
-    }
-    dispatch({
-      type: "loading",
-      payload: false
+  let data = await getCharacters(count,8)
+  for (let i = 0; i < characters.length; i++) {
+    let index =  data.findIndex(element => {
+      return element.char_id === characters[i].char_id
     })
-    dispatch({
-      type: "get_characters",
-      payload: characters
-    })
-  } else {
-    try {
-      const data = await getCharacters(count,8)
-      dispatch({
-        type: "get_characters",
-        payload: data
-      })
-      dispatch({
-        type: "loading",
-        payload: false
-      })
-    } catch (error) {
-      dispatch({
-        type: "error",
-        payload: error
-      })
+    if(index !== -1) {
+      data.splice(index,1,characters[i])
+      characters.splice(i,1)
+      i--
     }
   }
+  const updateCharacters = characters.concat(data)
+  updateCharacters.sort((c1,c2) => c1.char_id - c2.char_id)
+  dispatch({
+    type: GET_ALL,
+    payload: updateCharacters
+  })
 }
 export const getById = (id) => async (dispatch,getState) => {
+  dispatch({
+    type:LOADING
+  })
   const { characters } = getState().charactersReducer
+  try {
+    const data = await getCharacterById(id)
+    characters.push(data)
+    characters.sort((c1,c2) => c1.char_id - c2.char_id)
+    dispatch({
+      type: GET_BY_ID,
+      payload: characters
+    })
+  } catch (error) {
+    dispatch({
+      type: ERROR,
+      payload: error
+    })
+  }
   
 }
