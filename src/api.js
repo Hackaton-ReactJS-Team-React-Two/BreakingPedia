@@ -13,8 +13,8 @@ export const getCharacters = async (page,numPerPage) => {
 
 export const getCharacterById = async (id) => {
   const response = await fetchData(`characters/${id}`)
-  response.favorite = false
-  return response
+  response[0].favorite = false
+  return response[0]
 }
 
 export const getQuoteByName = async (name, random = false) => {
@@ -45,5 +45,8 @@ export const getRandomQuote = async () => {
 async function fetchData(url, params = "") {
   const response = await fetch(`${BaseUrl}${url}${params}`);
   const data = await response.json();
+  if(data.name === "error") {
+    throw data
+  }
   return data;
 }

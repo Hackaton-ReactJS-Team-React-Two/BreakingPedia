@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { getCharacters, getRandomQuote } from "../api";
+import { getRandomQuote } from "../api";
 import { connect } from 'react-redux'
 
 import * as charactersActions from '../actions/charactersActions'
@@ -20,15 +20,15 @@ function Home(props) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    setLoad(true);
+    setCount(props.count)
     setError(null);
+    setLoad(true)
     async function fetchData() {
       try {
         const quote = await getRandomQuote();
+        setLoad(false)
         setQuote(quote);
-        setLoad(false);
       } catch (error) {
-        setLoad(false);
         setError(error);
       }
     }
@@ -36,12 +36,16 @@ function Home(props) {
   }, []);
   useEffect(() => {
     async function fetchData(){
-      await props.GetAll(count)
-      if(props.characters.length === 63) {
+      await props.getAll(count)
+      if(props.characters.length + 7 === 63) {
         setVisible(false)
       }
     }
-    fetchData()
+    if(props.characters.length === 63) {
+      setVisible(false)
+    } else if(props.characters.length < 8 || (props.count !== count && count !== 1)) {
+      fetchData()
+    }
   }, [count]);
   if (props.error) {
     return <h1>{props.error.message}</h1>;
@@ -49,7 +53,7 @@ function Home(props) {
   if(error) {
     return <h1>{error.message}</h1>;
   }
-  if ((load || props.load) && props.characters.length  === 0) {
+  if (props.load && props.characters.length  === 0) {
     return <PageLoading/>;
   }
   return (
@@ -59,11 +63,12 @@ function Home(props) {
         <div className="HeroHome__container">
           <div className="HeroHome__content container m-auto">
             <div className="HeroHome__quote mb-4">
+              {load? <div className="spinner-border m-auto"><span className="sr-only">...Loading</span></div>: ""}
               <i className="HerHome__quote-message mb-4">
-                “{quote != null ? quote[0].quote : ""}”
+                {quote ? `“${quote[0].quote}”` :""}
               </i>
               <div className="HerHome__quote-author">
-                Author: {quote != null ? quote[0].author : ""}
+                 {quote ? `Author: ${quote[0].author}` : ""}
               </div>
             </div>
             <a className="btn btn-dark mx-auto d-block" href="#main-home">
