@@ -57,7 +57,7 @@ function CharacterDetails(props) {
     return <h1>Error {props.charactersReducer.error.code || props.quotesReducer.error.code} </h1>
   }
 
-  if (props.charactersReducer.load || props.quotesReducer.load) {
+  if (props.charactersReducer.load) {
     return <PageLaoding/>
   }
 
@@ -65,11 +65,20 @@ function CharacterDetails(props) {
     <div>
       <CharacterDetail character={character}/>
       <div className="row">
-        <div className="col-6">
+        <div className="col">
           <Comment />
         </div>
-        <div className="col-6">
-          {quotes != null ? <Quote quotes={quotes} /> : ""}
+        <div className="col">
+          {
+            props.quotesReducer.load? 
+              <div className="d-flex justify-content-center spinner-border text-warning m-auto">
+                <span className="sr-only">...Loading</span>
+              </div> 
+            : quotes.length?
+              <Quote quotes={quotes} />
+            :
+              ""
+          }
         </div>
       </div>
     </div>
