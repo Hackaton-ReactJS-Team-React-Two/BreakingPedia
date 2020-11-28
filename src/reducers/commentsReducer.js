@@ -16,11 +16,12 @@ export default (state = INITIAL_STATE,action) => {
       return { 
         ...state, 
         comments: action.payload,
+        load: false
       }
     case LOADING:
       return { 
         ...state, 
-        load: action.payload,
+        load: true,
         error: null
       }
     case ERROR:
