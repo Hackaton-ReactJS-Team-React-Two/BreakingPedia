@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import picture from "../images/Heisenberg.jpg";
-import job from "../images/maletin.png";
-import portrayed from "../images/avatar.png";
-import birthday from "../images/birthday-card.png";
-import status from "../images/me-gusta.png";
+import {
+  faBirthdayCake,
+  faHeart,
+  faUser,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "./styles/CharacterDetail.css";
 
 function CharacterDetail(props) {
@@ -17,57 +21,92 @@ function CharacterDetail(props) {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h1 className="card-title text__content">Name
-              </h1>
-              <h4 className="card-subtitle text__content">Nickname</h4>
-              <div className="card mb-3 detail topics">
-                <div className="row no-gutters row__topic">
-                  <div className="col-md-1">
-                    <img src={job} className="logo" alt="Character" />
-                  </div>
-                  <div className="col-md-2">
-                    <div className="card-body body__topics">
-                      <h5 className="text__content">Jobs</h5>
-                      <h6 className="text__content">Nickname</h6>
+              <h1 className="card-title text__content">Name</h1>
+              <h5 className="card-subtitle text__content">Nickname</h5>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <div className="card mb-3 detail topics">
+                      <div className="row no-gutters row__topic">
+                        <div className="col-md-1 logo__container">
+                          <FontAwesomeIcon
+                            icon={faBriefcase}
+                            className="logo"
+                            size="3x"
+                            alt="Job"
+                            fixedWidth
+                          />
+                        </div>
+                        <div className="col-md-2 topics__container">
+                          <div className="card-body body__topics">
+                            <h4 className="text__content">Jobs</h4>
+                            <h6 className="text__content">Nickname</h6>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="card mb-3 detail topics">
-                <div className="row no-gutters row__topic">
-                  <div className="col-md-1">
-                    <img src={portrayed} className="logo" alt="Character" />
-                  </div>
-                  <div className="col-md-2">
-                    <div className="card-body body__topics">
-                      <h5 className="text__content">Portrayed</h5>
-                      <h6 className="text__content">Nickname</h6>
+                  <div class="col">
+                    <div className="card mb-3 detail topics">
+                      <div className="row no-gutters row__topic">
+                        <div className="col-md-1 logo__container">
+                          <FontAwesomeIcon
+                            icon={faUser}
+                            className="logo"
+                            size="3x"
+                            alt="Portayed"
+                            fixedWidth
+                          />
+                        </div>
+                        <div className="col-md-2">
+                          <div className="card-body body__topics">
+                            <h4 className="text__content">Portrayed</h4>
+                            <h6 className="text__content">Nickname</h6>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="card mb-3 detail topics">
-                <div className="row no-gutters row__topic">
-                  <div className="col-md-1">
-                    <img src={birthday} className="logo" alt="Character" />
-                  </div>
-                  <div className="col-md-2">
-                    <div className="card-body body__topics">
-                      <h5 className="text__content">Birthday</h5>
-                      <h6 className="text__content">Nickname</h6>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <div className="card mb-3 detail topics">
+                      <div className="row no-gutters row__topic">
+                        <div className="col-md-1 logo__container">
+                          <FontAwesomeIcon
+                            icon={faBirthdayCake}
+                            className="logo"
+                            size="3x"
+                            alt="Character"
+                            fixedWidth
+                          />
+                        </div>
+                        <div className="col-md-2">
+                          <div className="card-body body__topics">
+                            <h4 className="text__content">Birthday</h4>
+                            <h6 className="text__content">Nickname</h6>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div className="card mb-3 detail topics">
-                <div className="row no-gutters row__topic">
-                  <div className="col-md-1">
-                    <img src={status} className="logo" alt="Character" />
-                  </div>
-                  <div className="col-md-2">
-                    <div className="card-body body__topics">
-                      <h5 className="text__content">Status</h5>
-                      <h6 className="text__content">Nickname</h6>
+                  <div class="col">
+                    <div className="card mb-3 detail topics">
+                      <div className="row no-gutters row__topic">
+                        <div className="col-md-1 logo__container">
+                          <FontAwesomeIcon
+                            icon={faHeart}
+                            className="logo"
+                            size="3x"
+                            alt="Status"
+                          />
+                        </div>
+                        <div className="col-md-2">
+                          <div className="card-body body__topics">
+                            <h4 className="text__content">Status</h4>
+                            <h6 className="text__content">Nickname</h6>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { getRandomQuote } from "../api";
+
 import { Form, FormControl, Button } from "react-bootstrap";
+import { getRandomQuote } from "../api";
 import { Link } from "react-router-dom";
+
 import logo from "../images/LogoGreen.png";
-import facebook from "../images/facebook-logo.png";
-import instagram from "../images/instagram-logo.png";
-import snapchat from "../images/snapcatch-logo.png";
-import twitter from "../images/twitter-logo.png";
-import youtube from "../images/youtube-logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookSquare,
+  faInstagramSquare,
+  faSnapchatSquare,
+  faTwitterSquare,
+  faYoutubeSquare,
+} from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/Footer.css";
 
@@ -50,7 +55,7 @@ function FooterComp() {
                   </div>
                   <div className="col">
                     <Link to="/my_space">
-                      <h6 className="links_name">My Space</h6>
+                      <h6 className="links_name">MySpace</h6>
                     </Link>
                   </div>
                   <div className="w-100"></div>
@@ -79,11 +84,26 @@ function FooterComp() {
                   Subscribe
                 </Button>
               </Form>
-              <img className="img_social" src={facebook} alt="facebook" />
-              <img className="img_social" src={instagram} alt="instagram" />
-              <img className="img_social" src={snapchat} alt="snapchat" />
-              <img className="img_social" src={twitter} alt="twitter" />
-              <img className="img_social" src={youtube} alt="youtube" />
+              <FontAwesomeIcon
+                className="img_social fa-lg"
+                icon={faFacebookSquare}
+              />
+              <FontAwesomeIcon
+                className="img_social fa-lg"
+                icon={faInstagramSquare}
+              />
+              <FontAwesomeIcon
+                className="img_social fa-lg"
+                icon={faSnapchatSquare}
+              />
+              <FontAwesomeIcon
+                className="img_social fa-lg"
+                icon={faTwitterSquare}
+              />
+              <FontAwesomeIcon
+                className="img_social fa-lg"
+                icon={faYoutubeSquare}
+              />
             </div>
           </div>
           <div className="row">

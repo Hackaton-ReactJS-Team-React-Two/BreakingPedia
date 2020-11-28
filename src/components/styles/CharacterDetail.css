@@ -1,11 +1,10 @@
 .container__detail {
-  display: flex;
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 .detail {
   border: none;
   background-color: #2b2800;
-  margin: 10px 20px;
 }
 
 .text__content {
@@ -34,23 +33,22 @@
 }
 
 .logo {
-  display: block;
-  margin: 35px 10px;
+  margin: 30px auto !important;
   filter: invert(100%);
-  width: 32px;
 }
 
 .topics {
-  margin: 10px 30px;
-  display: inline-block;
+  margin: auto;
   width: 330px;
   border: 1px solid #ffffff;
   border-radius: 10px;
 }
 
 .body__topics {
+  text-align: center;
   width: min-content;
-  margin: 0px 30px;
+  margin-top: 5px !important;
+  margin: auto 45px;
 }
 
 .row__topic {
@@ -59,16 +57,11 @@
 }
 
 @media screen and (min-width: 480px) {
-  .topics {
-    margin: auto 40px;
-  }
-  .logo {
-    margin: 20px auto;
-    margin-bottom: 0px;
-  }
-  .body__topics {
-    margin-top: -5px;
+  .logo__container{
     text-align: center;
+    margin-bottom: -25px;
+  }
+  .topics__container{
   }
 }
 

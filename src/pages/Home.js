@@ -1,16 +1,16 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { getRandomQuote } from "../api";
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
 
-import * as charactersActions from '../actions/charactersActions'
+import * as charactersActions from "../actions/charactersActions";
 
 import BannerHome from "../images/BannerHome.jpg";
 import "./styles/Home.css";
 
 import CharacterList from "../components/CharacterList";
 import SearchInput from "../components/SearchInput";
-import PageLoading from "../components/PageLoading"
-import MiniLoader from "../components/MiniLoader"
+import PageLoading from "../components/PageLoading";
+import MiniLoader from "../components/MiniLoader";
 
 function Home(props) {
   const [quote, setQuote] = useState(null);
@@ -20,13 +20,13 @@ function Home(props) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    setCount(props.count)
+    setCount(props.count);
     setError(null);
-    setLoad(true)
+    setLoad(true);
     async function fetchData() {
       try {
         const quote = await getRandomQuote();
-        setLoad(false)
+        setLoad(false);
         setQuote(quote);
       } catch (error) {
         setError(error);
@@ -35,26 +35,29 @@ function Home(props) {
     fetchData();
   }, []);
   useEffect(() => {
-    async function fetchData(){
-      await props.getAll(count)
-      if(props.characters.length + 7 === 63) {
-        setVisible(false)
+    async function fetchData() {
+      await props.getAll(count);
+      if (props.characters.length + 7 === 63) {
+        setVisible(false);
       }
     }
-    if(props.characters.length === 63) {
-      setVisible(false)
-    } else if(props.characters.length < 8 || (props.count !== count && count !== 1)) {
-      fetchData()
+    if (props.characters.length === 63) {
+      setVisible(false);
+    } else if (
+      props.characters.length < 8 ||
+      (props.count !== count && count !== 1)
+    ) {
+      fetchData();
     }
   }, [count]);
   if (props.error) {
     return <h1>{props.error.message}</h1>;
   }
-  if(error) {
+  if (error) {
     return <h1>{error.message}</h1>;
   }
-  if (props.load && props.characters.length  === 0) {
-    return <PageLoading/>;
+  if (props.load && props.characters.length === 0) {
+    return <PageLoading />;
   }
   return (
     <Fragment>
@@ -63,12 +66,18 @@ function Home(props) {
         <div className="HeroHome__container">
           <div className="HeroHome__content container m-auto">
             <div className="HeroHome__quote mb-4">
-              {load? <div className="spinner-border m-auto"><span className="sr-only">...Loading</span></div>: ""}
+              {load ? (
+                <div className="spinner-border m-auto">
+                  <span className="sr-only">...Loading</span>
+                </div>
+              ) : (
+                ""
+              )}
               <i className="HerHome__quote-message mb-4">
-                {quote ? `“${quote[0].quote}”` :""}
+                {quote ? `“${quote[0].quote}”` : ""}
               </i>
               <div className="HerHome__quote-author">
-                 {quote ? `Author: ${quote[0].author}` : ""}
+                {quote ? `Author: ${quote[0].author}` : ""}
               </div>
             </div>
             <a className="btn btn-dark mx-auto d-block" href="#main-home">
@@ -82,7 +91,7 @@ function Home(props) {
         <SearchInput />
         <div className=" mt-4 mb-5">
           <CharacterList characters={props.characters} />
-          {props.load && props.characters?<MiniLoader/>: ""}
+          {props.load && props.characters ? <MiniLoader /> : ""}
           <button
             onClick={() => {
               setCount(count + 1);
@@ -100,7 +109,7 @@ function Home(props) {
 }
 
 const mapStateToProps = (reducers) => {
-  return reducers.charactersReducer
-}
+  return reducers.charactersReducer;
+};
 
 export default connect(mapStateToProps, charactersActions)(Home);

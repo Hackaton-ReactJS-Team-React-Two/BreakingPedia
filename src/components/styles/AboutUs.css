@@ -1,14 +1,25 @@
-.about__container{
-    display: inline-flex;
+.About__container{
+    text-align: center;
+    height: 100%;
+    overflow: auto;
 }
+
+.About__container::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
+}
+
 .About{
     background: rgba(0, 0, 0, 0.5);
-    height: min-content;
-    width: fit-content;
+    height: 420px;
+    width: 250px;
     border: 5px solid;
     border-color: #161b18;
     border-radius: 10px;
-    margin: 20px auto;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .About__header{
@@ -30,15 +41,98 @@
 }
 
 .description{
-    width: 180px;
     color: antiquewhite;
     text-align: justify;
-    margin: 10px 25px;
+}
+
+.About__footer{
+    margin-bottom: 8px;
+    position: absolute;
+    bottom: 0;
 }
 
 .About__social{
     width: 23px;
     margin: 10px;
-    margin-left: 35px;
     filter: invert(100%);
+}
+
+@media screen and (min-width:500px){
+    .About__container{
+        display: block;
+    }
+    .About{
+        width: 400px;
+        height: 305px;
+        margin: 8px auto;
+    }
+    .description{
+        padding: 0 20px;
+        width: auto;
+    }
+    .About__footer{
+        margin-bottom: 15px;
+    }
+    .About__social{
+        margin-top: 10px;
+        margin-left: 70px;
+    }
+
+}
+
+@media screen and (min-width:680px){
+    .About{
+        width: 400px;
+        height: 320px;
+        margin: 50px auto;
+    }
+    .About__footer{
+        margin-bottom: 60px;
+    }
+    .About__social{
+        margin-left: 70px;
+    }
+}
+
+@media screen and (min-width:767px){
+    .About{
+        width: 400px;
+        height: 320px;
+        margin: 80px auto;
+    }
+    .About__footer{
+        margin-bottom: 90px;
+    }
+}
+
+@media screen and (min-width:990px){
+    .About{
+        width: 270px;
+        height: 360px;
+        margin: 120px auto;
+    }
+    .description{
+        padding: 0 20px;
+        width: auto;
+    }
+    .About__footer{
+        margin-bottom: 125px;
+    }
+    .About__social{
+        margin-left: 45px;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .About{
+        width: 270px;
+        height: 360px;
+        margin: 120px 40px;
+    }
+    .About__footer{
+        margin-bottom: 125px;
+    }
+    .About__social{
+        margin-left: 40px;
+    }
 }
