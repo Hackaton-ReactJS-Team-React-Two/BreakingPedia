@@ -12,13 +12,20 @@ import SearchInput from "../components/SearchInput";
 import PageLoading from "../components/PageLoading";
 import MiniLoader from "../components/MiniLoader";
 
+
 function Home(props) {
   const [quote, setQuote] = useState(null);
   const [error, setError] = useState(null);
   const [load, setLoad] = useState(false);
   const [count, setCount] = useState(1);
   const [visible, setVisible] = useState(true);
-
+  
+  const handleChangeFavorite= (id) => {
+    const character = props.characters[id]
+    character.favorite = !character.favorite
+    props.update(character,id)
+  }
+  
   useEffect(() => {
     setCount(props.count);
     setError(null);
@@ -90,8 +97,8 @@ function Home(props) {
         <h3 className="search__title my-3">Buscar</h3>
         <SearchInput />
         <div className=" mt-4 mb-5">
-          <CharacterList characters={props.characters} />
-          {props.load && props.characters ? <MiniLoader /> : ""}
+          <CharacterList onChangeFavorite={handleChangeFavorite} characters={props.characters} />
+          {props.load && props.characters?<MiniLoader/>: ""}
           <button
             onClick={() => {
               setCount(count + 1);

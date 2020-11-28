@@ -1,9 +1,11 @@
+import { act } from 'react-dom/test-utils';
 import {
 	LOADING,
 	ERROR,
   GET_ALL,
   GET_BY_ID,
   INCREMENT_COUNT,
+  UPDATE
 } from '../types/charactersTypes';
 
 const INITIAL_STATE = {
@@ -25,6 +27,11 @@ export default (state = INITIAL_STATE,action) => {
         ...state, 
         characters: action.payload,
         load: false
+      }
+    case UPDATE: 
+      return {
+        ...state,
+        characters: action.payload,
       }
     case GET_BY_ID:
       return { 

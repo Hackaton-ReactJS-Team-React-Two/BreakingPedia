@@ -47,6 +47,7 @@ function CharacterDetails(props) {
         setCharacter(props.charactersReducer.characters[index])
         setQuotes(props.quotesReducer.quotes[props.charactersReducer.characters[index].quotes_key])
         setComments(props.commentsReducer.comments[props.charactersReducer.characters[index].comments_key])
+        console.log(character);
       }
     }
     fetchData();

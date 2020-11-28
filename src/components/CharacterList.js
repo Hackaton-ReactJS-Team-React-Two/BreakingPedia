@@ -17,9 +17,13 @@ function CharacterList(props) {
           }
           return (
             <CharacterCard
+              onChangeFavorite={()=> {
+                props.onChangeFavorite(id) 
+              }}
               character={character}
               color={color}
               key={id}
+              id={id}
             />
           );
         })}

@@ -12,6 +12,8 @@
 
 .CharacterCard:hover .CharacterCard__container {
   background-color: transparent;
+  color: #FFFF22;
+  text-decoration: none;
 }
 
 .CharacterCard__image {
@@ -22,11 +24,10 @@
   position: absolute;
   top: 15px;
   left: 15px;
-  display: none;
-}
-
-.CharacterCard__favorite.true {
-  display: initial;
+  z-index: 1000;
+  cursor: pointer;
+  font-size: 33px;
+  color: #FFFF22;
 }
 
 .CharacterCard__container {

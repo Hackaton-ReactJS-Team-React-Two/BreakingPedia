@@ -6,7 +6,8 @@ import {
 	ERROR,
   GET_ALL,
   INCREMENT_COUNT,
-  GET_BY_ID
+  GET_BY_ID,
+  UPDATE
 } from '../types/charactersTypes';
 
 export const getAll = (count) => async (dispatch, getState) => {
@@ -56,4 +57,15 @@ export const getById = (id) => async (dispatch,getState) => {
     })
   }
   
+}
+
+export const update = (character_update,id) => (dispatch,getState) => {
+  const { characters } = getState().charactersReducer
+
+  const update_characters = [...characters]
+  update_characters[id] = character_update
+  dispatch({
+    type: UPDATE,
+    payload: update_characters
+  })
 }
