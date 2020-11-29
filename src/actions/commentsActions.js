@@ -2,6 +2,7 @@ import {
 	LOADING,
 	ERROR,
   GET_BY_CHARACTER,
+  ADD
 } from '../types/commentsTypes';
 import * as charactersTypes from '../types/charactersTypes'
 
@@ -38,5 +39,14 @@ export const getByCharacter = (id) => async (dispatch,getState) => {
       payload: error
     })
   }
-  
+}
+
+export const add = (id,comment) => (dispatch,getState) => {
+  const { comments } = getState().commentsReducer
+  const update_comments = [...comments]
+  update_comments[id].push(comment)
+  dispatch({
+    type: ADD,
+    payload: update_comments
+  })
 }

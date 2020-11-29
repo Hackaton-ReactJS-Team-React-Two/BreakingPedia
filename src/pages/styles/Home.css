@@ -40,3 +40,21 @@
   text-align: center;
   color: #FF2;
 }
+
+@media screen and (max-width: 800px) {
+  .HerHome__quote-message {
+    font-size: 1.5rem;
+  }
+  .HerHome__quote-author {
+    font-size: .7rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .HerHome__quote-message {
+    font-size: 1rem;
+  }
+  .HerHome__quote-author {
+    font-size: .5rem;
+  }
+}

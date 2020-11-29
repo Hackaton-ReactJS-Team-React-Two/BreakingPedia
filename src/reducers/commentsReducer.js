@@ -1,7 +1,8 @@
 import {
 	LOADING,
 	ERROR,
-	GET_BY_CHARACTER
+  GET_BY_CHARACTER,
+  ADD
 } from '../types/commentsTypes';
 
 const INITIAL_STATE = {
@@ -17,6 +18,11 @@ export default (state = INITIAL_STATE,action) => {
         ...state, 
         comments: action.payload,
         load: false
+      }
+    case ADD:
+      return { 
+        ...state, 
+        comments: action.payload
       }
     case LOADING:
       return { 

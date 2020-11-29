@@ -1,7 +1,6 @@
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import picture from "../images/Heisenberg.jpg";
 import {
   faBirthdayCake,
   faHeart,
@@ -23,9 +22,9 @@ function CharacterDetail(props) {
             <div className="card-body">
               <h1 className="card-title text__content">{props.character.name}</h1>
               <h5 className="card-subtitle text__content"> {props.character.nickname} </h5>
-              <div class="container">
-                <div class="row">
-                  <div class="col">
+              <div className="container">
+                <div className="row">
+                  <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
                         <div className="col-md-1 logo__container">
@@ -42,8 +41,7 @@ function CharacterDetail(props) {
                             <h6 className="text__content">Jobs</h6>
                             <ul>
                               {props.character.occupation.map((job,id) => {
-                                console.log(job);
-                                return <li className="text-white">{job}</li>
+                                return <li key={id} className="text-white">{job}</li>
                               })}
                             </ul>
                           </div>
@@ -51,7 +49,7 @@ function CharacterDetail(props) {
                       </div>
                     </div>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
                         <div className="col-md-1 logo__container">
@@ -72,8 +70,8 @@ function CharacterDetail(props) {
                       </div>
                     </div>
                   </div>
-                  <div class="w-100"></div>
-                  <div class="col">
+                  <div className="w-100"></div>
+                  <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
                         <div className="col-md-1 logo__container">
@@ -94,7 +92,7 @@ function CharacterDetail(props) {
                       </div>
                     </div>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
                         <div className="col-md-1 logo__container">

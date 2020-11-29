@@ -8,19 +8,34 @@ import * as commentsActions from '../actions/commentsActions';
 
 import CharacterDetail from "../components/CharacterDetail";
 import PageLoading from "../components/PageLoading";
-import Comment from "../components/Comment";
+import CommentList from "../components/CommentList";
+import CommentInput from "../components/CommentInput";
 import Quote from "../components/Quote";
-import PageLaoding from "../components/PageLoading"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPaperPlane,
+} from "@fortawesome/free-solid-svg-icons";
 
 const { getById: charactersGetById} = charactersActions;
 const { getByCharacter: quotesGetByCharacter } = quotesActions;
-const { getByCharacter: commentsGetByCharacter } = commentsActions;
+const { getByCharacter: commentsGetByCharacter, add: commentsAdd } = commentsActions;
 
 
 function CharacterDetails(props) {
   const [character, setCharacter] = useState(null);
   const [comments, setComments] = useState([]);
+  const [comment, setComment] = useState("")
   const [quotes, setQuotes] = useState([]);
+
+  const handleAddComment = () => {
+    const date = new Date()
+    const newComment = {
+      date,
+      content: comment
+    }
+
+    props.commentsAdd(character.comments_key, newComment)
+  }
   
   useEffect(() => {
 
@@ -28,7 +43,6 @@ function CharacterDetails(props) {
       charactersGetById,
       quotesGetByCharacter,
       commentsGetByCharacter,
-      validate,
       match: { params: { id } }
     } = props
     async function fetchData() {
@@ -47,7 +61,6 @@ function CharacterDetails(props) {
         setCharacter(props.charactersReducer.characters[index])
         setQuotes(props.quotesReducer.quotes[props.charactersReducer.characters[index].quotes_key])
         setComments(props.commentsReducer.comments[props.charactersReducer.characters[index].comments_key])
-        console.log(character);
       }
     }
     fetchData();
@@ -59,7 +72,7 @@ function CharacterDetails(props) {
   }
 
   if (props.charactersReducer.load) {
-    return <PageLaoding/>
+    return <PageLoading/>
   }
 
   return (
@@ -67,7 +80,10 @@ function CharacterDetails(props) {
       { character !== null ? <CharacterDetail character={character}/> : ""}
       <div className="row">
         <div className="col">
-          <Comment />
+          <CommentInput onChangeComment={(comment)=> {
+            setComment(comment)
+          }} onAddComment={handleAddComment}/>
+          <CommentList comments={comments} />
         </div>
         <div className="col">
           {
@@ -93,6 +109,7 @@ const mapDispatchToProps = {
   charactersGetById,
   quotesGetByCharacter,
   commentsGetByCharacter,
+  commentsAdd
 };
 
 
