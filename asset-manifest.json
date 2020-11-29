@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/BreakingPedia/static/css/main.37a1d32d.chunk.css",
-    "main.js": "/BreakingPedia/static/js/main.17019028.chunk.js",
-    "main.js.map": "/BreakingPedia/static/js/main.17019028.chunk.js.map",
-    "runtime-main.js": "/BreakingPedia/static/js/runtime-main.170990d6.js",
-    "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.170990d6.js.map",
+    "main.css": "/BreakingPedia/static/css/main.171d3d23.chunk.css",
+    "main.js": "/BreakingPedia/static/js/main.0bcb9640.chunk.js",
+    "main.js.map": "/BreakingPedia/static/js/main.0bcb9640.chunk.js.map",
+    "runtime-main.js": "/BreakingPedia/static/js/runtime-main.89521697.js",
+    "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.89521697.js.map",
     "static/css/2.43b2b750.chunk.css": "/BreakingPedia/static/css/2.43b2b750.chunk.css",
-    "static/js/2.8fb93eab.chunk.js": "/BreakingPedia/static/js/2.8fb93eab.chunk.js",
-    "static/js/2.8fb93eab.chunk.js.map": "/BreakingPedia/static/js/2.8fb93eab.chunk.js.map",
-    "static/js/3.6246f3a4.chunk.js": "/BreakingPedia/static/js/3.6246f3a4.chunk.js",
-    "static/js/3.6246f3a4.chunk.js.map": "/BreakingPedia/static/js/3.6246f3a4.chunk.js.map",
+    "static/js/2.0c799281.chunk.js": "/BreakingPedia/static/js/2.0c799281.chunk.js",
+    "static/js/2.0c799281.chunk.js.map": "/BreakingPedia/static/js/2.0c799281.chunk.js.map",
+    "static/js/3.a5c585d9.chunk.js": "/BreakingPedia/static/js/3.a5c585d9.chunk.js",
+    "static/js/3.a5c585d9.chunk.js.map": "/BreakingPedia/static/js/3.a5c585d9.chunk.js.map",
     "index.html": "/BreakingPedia/index.html",
     "static/css/2.43b2b750.chunk.css.map": "/BreakingPedia/static/css/2.43b2b750.chunk.css.map",
-    "static/css/main.37a1d32d.chunk.css.map": "/BreakingPedia/static/css/main.37a1d32d.chunk.css.map",
-    "static/js/2.8fb93eab.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.8fb93eab.chunk.js.LICENSE.txt",
-    "static/media/038-github.9e094d23.png": "/BreakingPedia/static/media/038-github.9e094d23.png",
+    "static/css/main.171d3d23.chunk.css.map": "/BreakingPedia/static/css/main.171d3d23.chunk.css.map",
+    "static/js/2.0c799281.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.0c799281.chunk.js.LICENSE.txt",
     "static/media/BannerContactUs.ab2a9d50.jpg": "/BreakingPedia/static/media/BannerContactUs.ab2a9d50.jpg",
     "static/media/BannerHome.785bd47d.jpg": "/BreakingPedia/static/media/BannerHome.785bd47d.jpg",
     "static/media/Breaking_Bad_5.1c6483ef.png": "/BreakingPedia/static/media/Breaking_Bad_5.1c6483ef.png",
     "static/media/Heisenberg.0982a3aa.jpg": "/BreakingPedia/static/media/Heisenberg.0982a3aa.jpg",
-    "static/media/LogoGreen.53d03b8e.png": "/BreakingPedia/static/media/LogoGreen.53d03b8e.png"
+    "static/media/LogoGreen.53d03b8e.png": "/BreakingPedia/static/media/LogoGreen.53d03b8e.png",
+    "static/media/profile_ferley.30a0d910.jpg": "/BreakingPedia/static/media/profile_ferley.30a0d910.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.170990d6.js",
+    "static/js/runtime-main.89521697.js",
     "static/css/2.43b2b750.chunk.css",
-    "static/js/2.8fb93eab.chunk.js",
-    "static/css/main.37a1d32d.chunk.css",
-    "static/js/main.17019028.chunk.js"
+    "static/js/2.0c799281.chunk.js",
+    "static/css/main.171d3d23.chunk.css",
+    "static/js/main.0bcb9640.chunk.js"
   ]
 }
