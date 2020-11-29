@@ -11,7 +11,7 @@ function CommentList(props) {
             <div className="comment__date text-secondary">
               {comment.date.toDateString()}
             </div>
-            <div className="comment__content text-white">
+            <div className="comment__content text-white text-break">
               {comment.content}
             </div>
           </div>
