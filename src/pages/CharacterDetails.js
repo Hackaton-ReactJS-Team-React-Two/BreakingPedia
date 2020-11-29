@@ -28,12 +28,15 @@ function CharacterDetails(props) {
   const [quotes, setQuotes] = useState([]);
 
   const handleAddComment = () => {
+    if(comment.trim() === "") {
+      return
+    }
     const date = new Date()
     const newComment = {
       date,
       content: comment
     }
-
+    setComment("")
     props.commentsAdd(character.comments_key, newComment)
   }
   
