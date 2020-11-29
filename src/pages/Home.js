@@ -94,7 +94,7 @@ function Home(props) {
         </div>
       </div>
       <main id="main-home">
-        <h3 className="search__title my-3">Buscar</h3>
+        <h3 className="search__title my-3">Search</h3>
         <SearchInput />
         <div className=" mt-4 mb-5">
           <CharacterList onChangeFavorite={handleChangeFavorite} characters={props.characters} />

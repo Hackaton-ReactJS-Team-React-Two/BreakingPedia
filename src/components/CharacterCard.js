@@ -23,7 +23,6 @@ function CharacterCard(props) {
       {
         props.character.favorite?
           <FontAwesomeIcon 
-            key={props.id}
             icon={faStar}
             onClick={props.onChangeFavorite}
             className="CharacterCard__favorite"

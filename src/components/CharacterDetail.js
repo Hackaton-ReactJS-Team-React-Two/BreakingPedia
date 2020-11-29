@@ -17,12 +17,12 @@ function CharacterDetail(props) {
       <div className="card mb-3 detail">
         <div className="row no-gutters">
           <div className="col-md-4 cont-img">
-            <img src={picture} className="card-img" alt="Character" />
+            <img src={props.character.img} className="card-img" alt="Character" />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h1 className="card-title text__content">Name</h1>
-              <h5 className="card-subtitle text__content">Nickname</h5>
+              <h1 className="card-title text__content">{props.character.name}</h1>
+              <h5 className="card-subtitle text__content"> {props.character.nickname} </h5>
               <div class="container">
                 <div class="row">
                   <div class="col">
@@ -39,8 +39,13 @@ function CharacterDetail(props) {
                         </div>
                         <div className="col-md-2 topics__container">
                           <div className="card-body body__topics">
-                            <h4 className="text__content">Jobs</h4>
-                            <h6 className="text__content">Nickname</h6>
+                            <h6 className="text__content">Jobs</h6>
+                            <ul>
+                              {props.character.occupation.map((job,id) => {
+                                console.log(job);
+                                return <li className="text-white">{job}</li>
+                              })}
+                            </ul>
                           </div>
                         </div>
                       </div>
@@ -61,7 +66,7 @@ function CharacterDetail(props) {
                         <div className="col-md-2">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Portrayed</h4>
-                            <h6 className="text__content">Nickname</h6>
+                            <h6 className="text__content"> {props.character.portrayed} </h6>
                           </div>
                         </div>
                       </div>
@@ -83,7 +88,7 @@ function CharacterDetail(props) {
                         <div className="col-md-2">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Birthday</h4>
-                            <h6 className="text__content">Nickname</h6>
+                            <h6 className="text__content">{props.character.birthday}</h6>
                           </div>
                         </div>
                       </div>
@@ -103,7 +108,7 @@ function CharacterDetail(props) {
                         <div className="col-md-2">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Status</h4>
-                            <h6 className="text__content">Nickname</h6>
+                            <h6 className="text__content">{props.character.status}</h6>
                           </div>
                         </div>
                       </div>

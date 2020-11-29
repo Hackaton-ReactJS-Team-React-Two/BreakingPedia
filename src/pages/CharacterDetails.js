@@ -64,7 +64,7 @@ function CharacterDetails(props) {
 
   return (
     <div>
-      <CharacterDetail character={character}/>
+      { character !== null ? <CharacterDetail character={character}/> : ""}
       <div className="row">
         <div className="col">
           <Comment />
