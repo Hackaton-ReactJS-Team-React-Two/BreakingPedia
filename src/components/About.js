@@ -31,14 +31,22 @@ function AboutUs() {
               </p>
             </div>
             <div className="About__footer">
-              <a href="https://github.com/carlosRPDev" target="_blank">
+              <a 
+                href="https://github.com/carlosRPDev" 
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
                   icon={faGithub}
                   fixedWidth
                 />
               </a>
-              <a href="https://www.linkedin.com/in/carlos-mario-rodriguez-pastrana-a5a8ab1a7">
+              <a 
+                href="https://www.linkedin.com/in/carlos-mario-rodriguez-pastrana-a5a8ab1a7"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
                   icon={faFacebook}
@@ -48,6 +56,7 @@ function AboutUs() {
               <a
                 href="https://www.linkedin.com/in/carlos-mario-rodriguez-pastrana-a5a8ab1a7"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
@@ -72,7 +81,11 @@ function AboutUs() {
               </p>
             </div>
             <div className="About__footer">
-              <a href="https://github.com/FerleyArias" target="_blank">
+              <a 
+                href="https://github.com/FerleyArias" 
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
                   icon={faGithub}
@@ -82,6 +95,7 @@ function AboutUs() {
               <a
                 href="https://www.facebook.com/ferleyesteban.ariaspulido"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
@@ -92,6 +106,7 @@ function AboutUs() {
               <a
                 href="http://linkedin.com/in/ferley-esteban-arias-pulido-696865171/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
@@ -116,7 +131,11 @@ function AboutUs() {
               </p>
             </div>
             <div className="About__footer">
-              <a href="https://github.com/TaniaPedrazaG" target="_blank">
+              <a 
+                href="https://github.com/TaniaPedrazaG" 
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
                   icon={faGithub}
@@ -126,6 +145,7 @@ function AboutUs() {
               <a
                 href="https://www.facebook.com/tania.pedrazagonzalez/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon
                   className="About__social fa-lg"
@@ -136,6 +156,7 @@ function AboutUs() {
               <a
                 href="https://www.linkedin.com/in/tania-pedraza-gonzalez-aa5b09182/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon
                   className="About__social fa-lg"

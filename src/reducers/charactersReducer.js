@@ -1,4 +1,3 @@
-import { act } from 'react-dom/test-utils';
 import {
 	LOADING,
 	ERROR,
@@ -15,7 +14,7 @@ const INITIAL_STATE = {
   count: 1
 }
 
-export default (state = INITIAL_STATE,action) => {
+const charactersReducer = (state = INITIAL_STATE,action) => {
   switch (action.type) {
     case INCREMENT_COUNT: 
       return {
@@ -55,3 +54,5 @@ export default (state = INITIAL_STATE,action) => {
     default: return state;
   }
 }
+
+export default charactersReducer

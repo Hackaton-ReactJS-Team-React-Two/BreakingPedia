@@ -10,7 +10,7 @@ const INITIAL_STATE = {
   error: null
 }
 
-export default (state = INITIAL_STATE,action) => {
+const quotesReducer = (state = INITIAL_STATE,action) => {
   switch (action.type) {
     case GET_BY_CHARACTER:
       return { 
@@ -34,3 +34,5 @@ export default (state = INITIAL_STATE,action) => {
     default: return state;
   }
 }
+
+export default quotesReducer

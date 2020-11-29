@@ -1,6 +1,4 @@
 import { getCharacters, getCharacterById } from "../api";
-import commentsReducer from "../reducers/commentsReducer";
-import quotesReducer from "../reducers/quotesReducer";
 import {
 	LOADING,
 	ERROR,

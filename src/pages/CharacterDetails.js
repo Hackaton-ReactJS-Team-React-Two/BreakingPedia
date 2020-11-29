@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
-import { getQuoteByName } from "../api";
 
 import * as charactersActions from '../actions/charactersActions';
 import * as quotesActions from '../actions/quotesActions';
@@ -11,10 +10,6 @@ import PageLoading from "../components/PageLoading";
 import CommentList from "../components/CommentList";
 import CommentInput from "../components/CommentInput";
 import Quote from "../components/Quote";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPaperPlane,
-} from "@fortawesome/free-solid-svg-icons";
 
 const { getById: charactersGetById} = charactersActions;
 const { getByCharacter: quotesGetByCharacter } = quotesActions;
@@ -49,10 +44,10 @@ function CharacterDetails(props) {
       match: { params: { id } }
     } = props
     async function fetchData() {
-      let index = props.charactersReducer.characters.findIndex(element => element.char_id == id)
+      let index = props.charactersReducer.characters.findIndex(element => element.char_id === parseInt(id))
       if(index === -1) {
         await charactersGetById(id)
-        index = props.charactersReducer.characters.findIndex(element => element.char_id == id)
+        index = props.charactersReducer.characters.findIndex(element => element.char_id === parseInt(id))
       }
       if(index !== -1) {
         if(!("quotes_key" in props.charactersReducer.characters[index])) {
