@@ -16,12 +16,21 @@ function CharacterDetail(props) {
       <div className="card mb-3 detail">
         <div className="row no-gutters">
           <div className="col-md-4 cont-img">
-            <img src={props.character.img} className="card-img" alt="Character" />
+            <img
+              src={props.character.img}
+              className="card-img"
+              alt="Character"
+            />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h1 className="card-title text__content">{props.character.name}</h1>
-              <h5 className="card-subtitle text__content"> {props.character.nickname} </h5>
+              <h1 className="card-title text__content">
+                {props.character.name}
+              </h1>
+              <h5 className="card-subtitle text__content">
+                {" "}
+                {props.character.nickname}{" "}
+              </h5>
               <div className="container">
                 <div className="row">
                   <div className="col">
@@ -37,11 +46,15 @@ function CharacterDetail(props) {
                           />
                         </div>
                         <div className="col-md-2 topics__container">
-                          <div className="card-body body__topics">
-                            <h6 className="text__content">Jobs</h6>
+                          <div className="card-body body__topics-jobs">
+                            <h4 className="text__content">Jobs</h4>
                             <ul>
-                              {props.character.occupation.map((job,id) => {
-                                return <li key={id} className="text-white">{job}</li>
+                              {props.character.occupation.map((job, id) => {
+                                return (
+                                  <li key={id}>
+                                    <h6 className="text__content-job">{job}</h6>
+                                  </li>
+                                );
                               })}
                             </ul>
                           </div>
@@ -64,7 +77,10 @@ function CharacterDetail(props) {
                         <div className="col-md-2">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Portrayed</h4>
-                            <h6 className="text__content"> {props.character.portrayed} </h6>
+                            <h6 className="text__content">
+                              {" "}
+                              {props.character.portrayed}{" "}
+                            </h6>
                           </div>
                         </div>
                       </div>
@@ -86,7 +102,9 @@ function CharacterDetail(props) {
                         <div className="col-md-2">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Birthday</h4>
-                            <h6 className="text__content">{props.character.birthday}</h6>
+                            <h6 className="text__content">
+                              {props.character.birthday}
+                            </h6>
                           </div>
                         </div>
                       </div>
@@ -106,11 +124,29 @@ function CharacterDetail(props) {
                         <div className="col-md-2">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Status</h4>
-                            <h6 className="text__content">{props.character.status}</h6>
+                            <h6 className="text__content">
+                              {props.character.status}
+                            </h6>
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div className="w-100"></div>
+                  <div className="col">
+                    <FontAwesomeIcon
+                      icon={'thumbs-up'}
+                      size="3x"
+                      color="blue"
+                      pull="right"
+                    />
+                  </div>
+                  <div className="col">
+                    <FontAwesomeIcon
+                      icon={["far", "star"]}
+                      size="3x"
+                      color="yellow"
+                    />
                   </div>
                 </div>
               </div>

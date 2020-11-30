@@ -11,6 +11,12 @@
   color: #ffffff;
 }
 
+.text__content-job{
+  color: #ffffff;
+  margin: auto;
+  margin-left: -40px;
+}
+
 .card-body {
   width: auto;
 }
@@ -45,10 +51,17 @@
 }
 
 .body__topics {
+  border: 1px solid springgreen;
   text-align: center;
-  width: min-content;
+  width: max-content;
   margin-top: 5px !important;
   margin: auto 45px;
+}
+
+.body__topics-jobs{
+  border: 1px solid springgreen;
+  text-align: center;
+  width: max-content;
 }
 
 .row__topic {
@@ -60,8 +73,6 @@
   .logo__container{
     text-align: center;
     margin-bottom: -25px;
-  }
-  .topics__container{
   }
 }
 
