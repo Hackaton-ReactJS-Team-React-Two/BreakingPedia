@@ -40,6 +40,11 @@
     margin: 5px;
 }
 
+.flagCo{
+    width: 18px;
+    text-align: center;
+}
+
 .description{
     color: antiquewhite;
     text-align: justify;
@@ -127,7 +132,7 @@
     .About{
         width: 270px;
         height: 360px;
-        margin: 120px 40px;
+        margin: 120px auto;
     }
     .About__footer{
         margin-bottom: 125px;

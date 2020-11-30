@@ -83,7 +83,6 @@ function FooterComp(props) {
               >
                 <FontAwesomeIcon
                   className="img_social fa-lg"
-                  className="logo__foot"
                   size="lg"
                   target="_blank"
                   color="white"

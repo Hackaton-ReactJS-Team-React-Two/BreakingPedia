@@ -72,7 +72,8 @@
         margin: 10px 32px;
     }
     .quote{
-        margin: 15px;
+        display: block;
+        margin: 10px auto;
     }
 
 }
@@ -96,7 +97,8 @@
         margin: 0px;
     }
     .img_social{
-        margin-left: 40px;
+        display: block;
+        margin: 10px auto;
     }
 }
 
@@ -109,7 +111,7 @@
         margin-top: 30px;
     }
     .links_name{
-        padding: 0px;
+        padding: 2px;
         margin: 0px;
     }
     .footer__h6{
@@ -122,19 +124,21 @@
         margin: 0px;
     }
     .img_social{
-        margin: 15px 37px;
+        display: block;
+        margin: 10px auto;
     }
 }
 
 @media screen and (min-width:990px){
     .list__links{
+        margin: 20px 0px;
         padding: 10px;
     }
     .button_subscribe{
         margin-top: 10px;
     }
     .img_social{
-        margin-left: auto;
+        margin: 10px 92px;
     }
 }
 
