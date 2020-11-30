@@ -7,7 +7,7 @@ function CommentList(props) {
     <div>
       {props.comments.map((comment,id) => {
         return(
-          <div key={id} className="border comment">
+          <div key={id} className="border comment mb-3">
             <div className="comment__date text-secondary">
               {comment.date.toDateString()}
             </div>

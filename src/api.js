@@ -34,6 +34,9 @@ export const getQuoteByName = async (name, random = false) => {
     }
   });
   const response = await fetchData(url, params);
+  if(response.length > 5) {
+    return response.slice(0,5)
+  }
   return response;
 };
 
