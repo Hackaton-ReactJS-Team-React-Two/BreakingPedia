@@ -1,127 +1,59 @@
-.favorite-icon {
-  color: yellow;
-  font-size: 40px;
-  margin: 0 auto;
-  display: block;
-}
-.container__detail {
+.container__card {
+  background-color: #2b2800;
   margin-top: 10px;
   margin-bottom: 40px;
 }
-.detail {
-  border: none;
-  background-color: #2b2800;
-}
 
-.text__content {
-  color: #ffffff;
-}
-
-.text__content-job{
-  color: #ffffff;
+.img__cont {
   margin: auto;
-  margin-left: -40px;
-  justify-content: center;
 }
 
-.card-body {
-  width: auto;
-}
-
-.card-title {
-  margin: 5px 0px;
-  text-align: center;
-}
-
-.card-subtitle {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.card-img {
+.card__img {
   display: flex;
-  margin: 40px auto 20px;
+  margin: 30px auto;
+  margin-bottom: 20px;
   width: 260px;
   border-radius: 20px;
 }
 
-.cont-img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.favorite-icon {
+  color: yellow;
+  margin: 20px auto;
+  display: block;
+  transition: transform .2s;
 }
 
-.logo {
-  margin: 30px auto !important;
-  filter: invert(100%);
+.favorite-icon:hover {
+  transform: scale(1.5);
+}
+
+.body__cont {
+  margin: 30px auto;
+}
+
+.boxes_container {
+  margin: 15px auto;
+}
+
+.topic__container {
+  width: auto;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.card__text {
+  color: #ffffff;
+  text-align: center;
+}
+
+.text__content {
+  margin-left: -35px;
+  list-style: none;
 }
 
 .logo__container {
-  display: flex;
-  align-items: center;
-}
-
-.topics {
-  margin: auto;
-  width: 330px;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-}
-
-.body__topics {
-  justify-content: center;
-  width: max-content;
-  margin: 0 auto;
+  margin: auto -40px;
+  margin-left: -30px;
   text-align: center;
-}
-
-.body__topics-jobs{
-  margin: 0 auto;
-  text-align: center;
-}
-.row__topic{
-  padding: 0 20px;
-}
-
-@media screen and (min-width: 480px) {
-  .logo__container{
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 683px) {
-  .topics {
-    margin: auto 120px;
-  }
-  .logo {
-    margin: 20px auto;
-    margin-bottom: 0px;
-  }
-  .body__topics {
-    margin-top: -5px;
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .topics {
-    margin: auto 60px;
-  }
-  .logo {
-    margin: 30px auto;
-    margin-bottom: 5px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .topics {
-    margin: 10px 20px;
-  }
-  .logo {
-    margin: 30px 10px;
-    margin-right: 20px;
-  }
-  .cont-img {
-    margin-bottom: 30px;
-  }
 }

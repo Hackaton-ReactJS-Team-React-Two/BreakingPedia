@@ -8,7 +8,13 @@
 
 .link_name{
     padding: 10px 15px;
-    color: #ffffff !important;
+    color: #ffffff;
+    transition: transform .2s;
+}
+
+.link_name:hover{
+    color: #bf7504;
+    transform: scale(1.1);
 }
 
 @media screen and (min-width:480px){

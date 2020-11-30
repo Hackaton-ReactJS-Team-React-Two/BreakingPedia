@@ -13,132 +13,102 @@ import "./styles/CharacterDetail.css";
 
 function CharacterDetail(props) {
   return (
-    <div className="container__detail">
-      <div className="card mb-3 detail">
-        <div className="row no-gutters">
-          <div className="col-md-4 cont-img">
-            <img
-              src={props.character.img}
-              className="card-img"
-              alt="Character"
-            />
-            <FontAwesomeIcon 
-              onClick={props.onChangeFavorite} className="favorite-icon" 
-              icon={props.character.favorite? faStar : ["far", "star"]}
-            />
+    <div class="row container__card">
+      <div class="col-6 col-md-4 img__cont">
+        <img src={props.character.img} className="card__img" alt="Character" />
+        <FontAwesomeIcon
+          onClick={props.onChangeFavorite}
+          className="favorite-icon"
+          size="3x"
+          icon={props.character.favorite ? faStar : ["far", "star"]}
+        />
+      </div>
+      <div class="col-md-8 body__cont">
+        <div class="col">
+          <h1 className="card__text">{props.character.name}</h1>
+          <h5 className="card__text">{props.character.nickname}</h5>
+        </div>
+        <div class="row">
+          <div class="col-sm boxes_container">
+            <div class="row topic__container">
+              <div class="col-5 logo__container">
+                <FontAwesomeIcon
+                  icon={faBriefcase}
+                  className="logo"
+                  size="3x"
+                  alt="Job"
+                  color="white"
+                  fixedWidth
+                />
+              </div>
+              <div class="col card__text">
+                <h4>Jobs</h4>
+                <ul className="text__content">
+                  {props.character.occupation.map((job, id, array) => {
+                    return (
+                      <li key={id}>
+                        <h6>
+                          {job}
+                          {array.length - 1 === id ? "" : ","}
+                        </h6>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h1 className="card-title text__content">
-                {props.character.name}
-              </h1>
-              <h5 className="card-subtitle text__content">
-                {" "}
-                {props.character.nickname}{" "}
-              </h5>
-              <div className="container">
-                <div className="row">
-                  <div className="col">
-                    <div className="card mb-3 detail topics">
-                      <div className="row no-gutters row__topic">
-                        <div className="col-md-3 logo__container">
-                          <FontAwesomeIcon
-                            icon={faBriefcase}
-                            className="logo"
-                            size="3x"
-                            alt="Job"
-                            fixedWidth
-                          />
-                        </div>
-                        <div className="col-md-9 topics__container">
-                          <div className="card-body body__topics-jobs">
-                            <h4 className="text__content text__title">Jobs</h4>
-                            <ul>
-                              {props.character.occupation.map((job, id,array) => {
-                                return (
-                                  <li key={id}>
-                                    <h6 className="text__content-job">{job}{array.length-1 === id ?"":","}</h6>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col">
-                    <div className="card mb-3 detail topics">
-                      <div className="row no-gutters row__topic">
-                        <div className="col-md-3 logo__container">
-                          <FontAwesomeIcon
-                            icon={faUser}
-                            className="logo"
-                            size="3x"
-                            alt="Portayed"
-                            fixedWidth
-                          />
-                        </div>
-                        <div className="col-md-9">
-                          <div className="card-body body__topics">
-                            <h4 className="text__content">Portrayed</h4>
-                            <h6 className="text__content">
-                              {" "}
-                              {props.character.portrayed}{" "}
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-100"></div>
-                  <div className="col">
-                    <div className="card mb-3 detail topics">
-                      <div className="row no-gutters row__topic">
-                        <div className="col-md-3 logo__container">
-                          <FontAwesomeIcon
-                            icon={faBirthdayCake}
-                            className="logo"
-                            size="3x"
-                            alt="Character"
-                            fixedWidth
-                          />
-                        </div>
-                        <div className="col-md-9">
-                          <div className="card-body body__topics">
-                            <h4 className="text__content">Birthday</h4>
-                            <h6 className="text__content">
-                              {props.character.birthday}
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col">
-                    <div className="card mb-3 detail topics">
-                      <div className="row no-gutters row__topic">
-                        <div className="col-md-3 logo__container">
-                          <FontAwesomeIcon
-                            icon={faHeart}
-                            className="logo"
-                            size="3x"
-                            alt="Status"
-                          />
-                        </div>
-                        <div className="col-md-9">
-                          <div className="card-body body__topics">
-                            <h4 className="text__content">Status</h4>
-                            <h6 className="text__content">
-                              {props.character.status}
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-100"></div>
-                </div>
+          <div class="col-sm boxes_container">
+            <div class="row topic__container">
+              <div class="col-5 logo__container">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className="logo"
+                  size="3x"
+                  alt="Portayed"
+                  color="white"
+                  fixedWidth
+                />
+              </div>
+              <div class="col card__text">
+                <h4>Portrayed</h4>
+                <h6> {props.character.portrayed} </h6>
+              </div>
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-sm boxes_container">
+            <div class="row topic__container">
+              <div class="col-5 logo__container">
+                <FontAwesomeIcon
+                  icon={faBirthdayCake}
+                  className="logo"
+                  size="3x"
+                  alt="Character"
+                  color="white"
+                  fixedWidth
+                />
+              </div>
+              <div class="col card__text">
+                <h4>Birthday</h4>
+                <h6>{props.character.birthday}</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm boxes_container">
+            <div class="row topic__container">
+              <div class="col-5 logo__container">
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  className="logo"
+                  size="3x"
+                  color="white"
+                  alt="Status"
+                />
+              </div>
+              <div class="col card__text">
+                <h4>Status</h4>
+                <h6>{props.character.status}</h6>
               </div>
             </div>
           </div>

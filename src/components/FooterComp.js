@@ -6,13 +6,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../images/LogoGreen.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookSquare,
-  faInstagramSquare,
-  faSnapchatSquare,
-  faTwitterSquare,
-  faYoutubeSquare,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/Footer.css";
 
@@ -28,7 +22,6 @@ function FooterComp() {
       try {
         const quote = await getRandomQuote();
         setQuote(quote);
-        console.log(quote);
         setLoad(false);
       } catch (error) {
         setLoad(false);
@@ -84,26 +77,19 @@ function FooterComp() {
                   Subscribe
                 </Button>
               </Form>
-              <FontAwesomeIcon
-                className="img_social fa-lg"
-                icon={faFacebookSquare}
-              />
-              <FontAwesomeIcon
-                className="img_social fa-lg"
-                icon={faInstagramSquare}
-              />
-              <FontAwesomeIcon
-                className="img_social fa-lg"
-                icon={faSnapchatSquare}
-              />
-              <FontAwesomeIcon
-                className="img_social fa-lg"
-                icon={faTwitterSquare}
-              />
-              <FontAwesomeIcon
-                className="img_social fa-lg"
-                icon={faYoutubeSquare}
-              />
+              <Link
+                to="https://hackaton-reactjs-team-react-two.github.io/"
+                alt="GitHub"
+              >
+                <FontAwesomeIcon
+                  className="img_social fa-lg"
+                  className="logo__foot"
+                  size="lg"
+                  target="_blank"
+                  color="white"
+                  icon={faGithubSquare}
+                />
+              </Link>
             </div>
           </div>
           <div className="row">
