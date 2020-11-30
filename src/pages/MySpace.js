@@ -11,20 +11,30 @@ import PageLoading from "../components/PageLoading";
 import MiniLoader from "../components/MiniLoader";
 
 function MySpace(props) {
-  const [favCharacter, setFavCharacter] = useState([]);
+  const [favCharacters, setFavCharacters] = useState([]);
 
   useEffect(() => {
     const result = props.characters.filter((character) => {
       return character.favorite;
     });
-    setFavCharacter(result);
+    setFavCharacters(result);
   }, []);
+
+  const handleChangeFavorite= (id) => {
+    const index = props.characters.findIndex(character=>character.char_id===id)
+    const character = props.characters[index]
+    character.favorite = !character.favorite
+    props.update(character,index)
+    const favIndex = favCharacters.findIndex(character=>character.char_id===id)
+    favCharacters.splice(favIndex,1)
+  }
+
   return (
     <Fragment>
       <h3 className="search__title my-3">My Space</h3>
       <SearchInput />
       <div className=" mt-4 mb-5">
-        <CharacterList characters={favCharacter} />
+        <CharacterList onChangeFavorite={handleChangeFavorite} characters={favCharacters} />
       </div>
     </Fragment>
   );

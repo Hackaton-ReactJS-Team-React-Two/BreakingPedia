@@ -21,9 +21,10 @@ function Home(props) {
   const [visible, setVisible] = useState(true);
   
   const handleChangeFavorite= (id) => {
-    const character = props.characters[id]
+    const index = props.characters.findIndex(character=>character.char_id===id)
+    const character = props.characters[index]
     character.favorite = !character.favorite
-    props.update(character,id)
+    props.update(character,index)
   }
   
   useEffect(() => {

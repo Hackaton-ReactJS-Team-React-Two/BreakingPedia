@@ -17,9 +17,7 @@ function CharacterList(props) {
           }
           return (
             <CharacterCard
-              onChangeFavorite={()=> {
-                props.onChangeFavorite(id) 
-              }}
+              onChangeFavorite={props.onChangeFavorite}
               character={character}
               color={color}
               key={id}
