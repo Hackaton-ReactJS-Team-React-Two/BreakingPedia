@@ -10,33 +10,35 @@ import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/Footer.css";
 
-function FooterComp() {
+function FooterComp(props) {
   const [quote, setQuote] = useState(null);
   const [error, setError] = useState(null);
-  const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    setLoad(true);
     setError(null);
     async function fetchData() {
       try {
         const quote = await getRandomQuote();
         setQuote(quote);
-        setLoad(false);
       } catch (error) {
-        setLoad(false);
         setError(error);
       }
     }
     fetchData();
   }, []);
+  if (props.error) {
+    return <h1>{props.error.message}</h1>;
+  }
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
   return (
     <footer>
       <div className="footer">
         <div className="container">
           <div className="row">
             <div className="col-sm">
-              <img src={logo} className="img_logo" />
+              <img src={logo} className="img_logo" alt="Logo" />
             </div>
             <div className="col-sm">
               <div className="container list__links">
@@ -57,11 +59,7 @@ function FooterComp() {
                       <h6 className="links_name">About us</h6>
                     </Link>
                   </div>
-                  <div className="col">
-                    <Link>
-                      <h6 className="links_name"></h6>
-                    </Link>
-                  </div>
+                  <div className="col"></div>
                 </div>
               </div>
             </div>

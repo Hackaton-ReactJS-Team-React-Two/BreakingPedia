@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Fragment, useMemo } from "react";
-import { getRandomQuote } from "../api";
 import { connect } from "react-redux";
 
 import * as charactersActions from "../actions/charactersActions";
@@ -8,8 +7,6 @@ import "./styles/Home.css";
 
 import CharacterList from "../components/CharacterList";
 import SearchInput from "../components/SearchInput";
-import PageLoading from "../components/PageLoading";
-import MiniLoader from "../components/MiniLoader";
 
 function SearchFavoriteCharacters(characters) {
   const [query, setQuery] = React.useState("");
