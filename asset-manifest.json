@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/BreakingPedia/static/css/main.36911565.chunk.css",
-    "main.js": "/BreakingPedia/static/js/main.257566c8.chunk.js",
-    "main.js.map": "/BreakingPedia/static/js/main.257566c8.chunk.js.map",
+    "main.js": "/BreakingPedia/static/js/main.b919d213.chunk.js",
+    "main.js.map": "/BreakingPedia/static/js/main.b919d213.chunk.js.map",
     "runtime-main.js": "/BreakingPedia/static/js/runtime-main.89521697.js",
     "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.89521697.js.map",
     "static/css/2.43b2b750.chunk.css": "/BreakingPedia/static/css/2.43b2b750.chunk.css",
@@ -25,6 +25,6 @@
     "static/css/2.43b2b750.chunk.css",
     "static/js/2.28bd9140.chunk.js",
     "static/css/main.36911565.chunk.css",
-    "static/js/main.257566c8.chunk.js"
+    "static/js/main.b919d213.chunk.js"
   ]
 }
