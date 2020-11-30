@@ -15,8 +15,8 @@
     color: antiquewhite;
 }
 
-.img_social{
-    filter: invert(100%);
+.logo__foot{
+    margin-left: 10px;
 }
 
 .list__links{

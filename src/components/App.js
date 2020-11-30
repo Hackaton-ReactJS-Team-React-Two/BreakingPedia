@@ -1,9 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+<<<<<<< HEAD
 import Build from "../pages/Build";
 import Home from "../pages/Home";
 import CharacterDetails from "../pages/CharacterDetails";
+=======
+import Home from '../pages/Home'
+import CharacterDetails from '../pages/CharacterDetails'
+>>>>>>> develop
 import AboutUs from "../pages/AboutUs";
 import MySpace from "../pages/MySpace";
 import Layout from "../components/Layout";
@@ -21,11 +26,15 @@ function App() {
           <Route exact path="/BreakingPedia" component={Home} />
           <Route exact path="/BreakingPedia/about_us" component={AboutUs} />
           <Route exact path="/BreakingPedia/my_space" component={MySpace} />
+<<<<<<< HEAD
           <Route
             exact
             path="/BreakingPedia/character/:id"
             component={CharacterDetails}
           />
+=======
+          <Route exact path="/BreakingPedia/character/:id" component={CharacterDetails} />
+>>>>>>> develop
         </Switch>
       </Layout>
     </BrowserRouter>
