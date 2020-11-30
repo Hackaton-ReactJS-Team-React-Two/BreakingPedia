@@ -7,7 +7,7 @@ function ContactUs() {
   return (
     <Fragment>
       <div className="HeroHome">
-        <img className="HeroHome__image" src={BannerContactUs} alt="" />
+        <img className="HeroHome__image" src={BannerContactUs} alt="About Banner" />
         <div className="HeroHome__container">
           <About />
         </div>

@@ -64,9 +64,10 @@ function Home(props) {
   }, []);
   useEffect(() => {
     async function fetchData() {
+      setVisible(false)
       await props.getAll(count);
-      if (props.characters.length + 7 === 63) {
-        setVisible(false);
+      if (!(props.characters.length + 7 === 63)) {
+        setVisible(true);
       }
     }
     if (props.characters.length === 63) {

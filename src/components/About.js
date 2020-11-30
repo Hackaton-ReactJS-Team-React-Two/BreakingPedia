@@ -24,7 +24,7 @@ function AboutUs() {
               <img className="About__avatar" src={avatarCarlos} alt="avatar" />
               <h3 className="titles">Carlos Rodriguez</h3>
               <h5 className="titles">
-                Montería, CO <img src={colombiaFlag} className="flagCo" />
+                Montería, CO <img src={colombiaFlag} alt="flag Colombia" className="flagCo" />
               </h5>
             </div>
             <div className="About__section">
@@ -76,7 +76,7 @@ function AboutUs() {
               <img className="About__avatar" src={avatarFerley} alt="avatar" />
               <h3 className="titles">Ferley Arias</h3>
               <h5 className="titles">
-                San Gil, CO <img src={colombiaFlag} className="flagCo" />
+                San Gil, CO <img src={colombiaFlag} alt="flag Colombia" className="flagCo" />
               </h5>
             </div>
             <div className="About__section">
@@ -128,7 +128,7 @@ function AboutUs() {
               <img className="About__avatar" src={avatarMateo} alt="avatar" />
               <h3 className="titles">Mateo Loaiza</h3>
               <h5 className="titles">
-                Manizales, CO <img src={colombiaFlag} className="flagCo" />
+                Manizales, CO <img src={colombiaFlag} alt="flag Colombia" className="flagCo" />
               </h5>
             </div>
             <div className="About__section">
@@ -180,7 +180,7 @@ function AboutUs() {
               <img className="About__avatar" src={avatarTania} alt="avatar" />
               <h3 className="titles">Tania Pedraza</h3>
               <h5 className="titles">
-                Duitama, CO <img src={colombiaFlag} className="flagCo" />
+                Duitama, CO <img src={colombiaFlag} alt="flag Colombia" className="flagCo" />
               </h5>
             </div>
             <div className="About__section">
