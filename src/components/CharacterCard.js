@@ -30,7 +30,7 @@ function CharacterCard(props) {
         :
           ""
       }
-      <Link to={`/character/${props.character.char_id}`} className={`CharacterCard__container ${props.color}`}>
+      <Link to={`/BreakingPedia/character/${props.character.char_id}`} className={`CharacterCard__container ${props.color}`}>
         <h5 className="CharacterCard__name"> {props.character.name} </h5>
       </Link>
     </div>

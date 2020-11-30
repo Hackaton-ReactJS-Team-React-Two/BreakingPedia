@@ -9,7 +9,7 @@ function NavbarComp(props) {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <div className="container">
         <Navbar.Brand>
-          <Link to="/">
+          <Link to="/BreakingPedia">
             <img
               src={logo}
               className="d-inline-block align-top nav__logo"
@@ -21,13 +21,13 @@ function NavbarComp(props) {
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className="container">
             <Nav>
-              <Link className="link_name" to="/">
+              <Link className="link_name" to="/BreakingPedia">
                 Home
               </Link>
-              <Link className="link_name" to="/my_space">
+              <Link className="link_name" to="/BreakingPedia/my_space">
                 MySpace
               </Link>
-              <Link className="link_name" to="/about_us">
+              <Link className="link_name" to="/BreakingPedia/about_us">
                 About us
               </Link>
             </Nav>
