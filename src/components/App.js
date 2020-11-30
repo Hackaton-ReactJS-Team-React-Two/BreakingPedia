@@ -8,6 +8,11 @@ import AboutUs from "../pages/AboutUs";
 import MySpace from '../pages/MySpace'
 import Layout from "../components/Layout";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStar } from '@fortawesome/free-regular-svg-icons'
+
+library.add(faStar)
+
 function App() {
   return (
     <BrowserRouter>

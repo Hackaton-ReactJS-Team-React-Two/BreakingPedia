@@ -11,7 +11,7 @@ import CommentList from "../components/CommentList";
 import CommentInput from "../components/CommentInput";
 import Quote from "../components/Quote";
 
-const { getById: charactersGetById} = charactersActions;
+const { getById: charactersGetById, update: charactersUpdate } = charactersActions;
 const { getByCharacter: quotesGetByCharacter } = quotesActions;
 const { getByCharacter: commentsGetByCharacter, add: commentsAdd } = commentsActions;
 
@@ -21,6 +21,7 @@ function CharacterDetails(props) {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("")
   const [quotes, setQuotes] = useState([]);
+  const [id, setId] = useState(null);
 
   const handleAddComment = () => {
     if(comment.trim() === "") {
@@ -56,6 +57,7 @@ function CharacterDetails(props) {
         if(!("comments_key" in props.charactersReducer.characters[index])) {
           await commentsGetByCharacter(index)
         }
+        setId(index)
         setCharacter(props.charactersReducer.characters[index])
         setQuotes(props.quotesReducer.quotes[props.charactersReducer.characters[index].quotes_key])
         setComments(props.commentsReducer.comments[props.charactersReducer.characters[index].comments_key])
@@ -64,6 +66,12 @@ function CharacterDetails(props) {
     fetchData();
 
   }, [character,quotes,comments]);
+
+  const handleChangeFavorite= () => {
+    const update_character = character
+    update_character.favorite = !character.favorite
+    props.charactersUpdate(character,id)
+  }
 
   if(props.charactersReducer.error || props.quotesReducer.error) {
     return <h1>Error {props.charactersReducer.error.code || props.quotesReducer.error.code} </h1>
@@ -75,7 +83,7 @@ function CharacterDetails(props) {
 
   return (
     <div>
-      { character !== null ? <CharacterDetail character={character}/> : ""}
+      { character !== null ? <CharacterDetail onChangeFavorite={handleChangeFavorite} character={character}/> : ""}
       <div className="row">
         <div className="col">
           <CommentInput onChangeComment={(comment)=> {
@@ -107,7 +115,8 @@ const mapDispatchToProps = {
   charactersGetById,
   quotesGetByCharacter,
   commentsGetByCharacter,
-  commentsAdd
+  commentsAdd,
+  charactersUpdate
 };
 
 

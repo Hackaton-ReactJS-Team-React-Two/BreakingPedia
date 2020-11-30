@@ -6,6 +6,7 @@ import {
   faHeart,
   faUser,
   faBriefcase,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/CharacterDetail.css";
@@ -16,18 +17,31 @@ function CharacterDetail(props) {
       <div className="card mb-3 detail">
         <div className="row no-gutters">
           <div className="col-md-4 cont-img">
-            <img src={props.character.img} className="card-img" alt="Character" />
+            <img
+              src={props.character.img}
+              className="card-img"
+              alt="Character"
+            />
+            <FontAwesomeIcon 
+              onClick={props.onChangeFavorite} className="favorite-icon" 
+              icon={props.character.favorite? faStar : ["far", "star"]}
+            />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h1 className="card-title text__content">{props.character.name}</h1>
-              <h5 className="card-subtitle text__content"> {props.character.nickname} </h5>
+              <h1 className="card-title text__content">
+                {props.character.name}
+              </h1>
+              <h5 className="card-subtitle text__content">
+                {" "}
+                {props.character.nickname}{" "}
+              </h5>
               <div className="container">
                 <div className="row">
                   <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
-                        <div className="col-md-1 logo__container">
+                        <div className="col-md-3 logo__container">
                           <FontAwesomeIcon
                             icon={faBriefcase}
                             className="logo"
@@ -36,12 +50,16 @@ function CharacterDetail(props) {
                             fixedWidth
                           />
                         </div>
-                        <div className="col-md-2 topics__container">
-                          <div className="card-body body__topics">
-                            <h6 className="text__content">Jobs</h6>
+                        <div className="col-md-9 topics__container">
+                          <div className="card-body body__topics-jobs">
+                            <h4 className="text__content text__title">Jobs</h4>
                             <ul>
-                              {props.character.occupation.map((job,id) => {
-                                return <li key={id} className="text-white">{job}</li>
+                              {props.character.occupation.map((job, id,array) => {
+                                return (
+                                  <li key={id}>
+                                    <h6 className="text__content-job">{job}{array.length-1 === id ?"":","}</h6>
+                                  </li>
+                                );
                               })}
                             </ul>
                           </div>
@@ -52,7 +70,7 @@ function CharacterDetail(props) {
                   <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
-                        <div className="col-md-1 logo__container">
+                        <div className="col-md-3 logo__container">
                           <FontAwesomeIcon
                             icon={faUser}
                             className="logo"
@@ -61,10 +79,13 @@ function CharacterDetail(props) {
                             fixedWidth
                           />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-9">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Portrayed</h4>
-                            <h6 className="text__content"> {props.character.portrayed} </h6>
+                            <h6 className="text__content">
+                              {" "}
+                              {props.character.portrayed}{" "}
+                            </h6>
                           </div>
                         </div>
                       </div>
@@ -74,7 +95,7 @@ function CharacterDetail(props) {
                   <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
-                        <div className="col-md-1 logo__container">
+                        <div className="col-md-3 logo__container">
                           <FontAwesomeIcon
                             icon={faBirthdayCake}
                             className="logo"
@@ -83,10 +104,12 @@ function CharacterDetail(props) {
                             fixedWidth
                           />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-9">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Birthday</h4>
-                            <h6 className="text__content">{props.character.birthday}</h6>
+                            <h6 className="text__content">
+                              {props.character.birthday}
+                            </h6>
                           </div>
                         </div>
                       </div>
@@ -95,7 +118,7 @@ function CharacterDetail(props) {
                   <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
-                        <div className="col-md-1 logo__container">
+                        <div className="col-md-3 logo__container">
                           <FontAwesomeIcon
                             icon={faHeart}
                             className="logo"
@@ -103,15 +126,18 @@ function CharacterDetail(props) {
                             alt="Status"
                           />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-9">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Status</h4>
-                            <h6 className="text__content">{props.character.status}</h6>
+                            <h6 className="text__content">
+                              {props.character.status}
+                            </h6>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div className="w-100"></div>
                 </div>
               </div>
             </div>

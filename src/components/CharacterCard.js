@@ -24,7 +24,7 @@ function CharacterCard(props) {
         props.character.favorite?
           <FontAwesomeIcon 
             icon={faStar}
-            onClick={props.onChangeFavorite}
+            onClick={()=>props.onChangeFavorite(props.character.char_id)}
             className="CharacterCard__favorite"
           />
         :

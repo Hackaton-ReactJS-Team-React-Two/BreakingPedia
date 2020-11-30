@@ -38,6 +38,7 @@ function Home(props) {
   const [load, setLoad] = useState(false);
   const [count, setCount] = useState(1);
   const [visible, setVisible] = useState(true);
+<<<<<<< HEAD
   const { query, setQuery, filteredCharacters } = SearchCharacters(
     props.characters
   );
@@ -48,6 +49,16 @@ function Home(props) {
     props.update(character, id);
   };
 
+=======
+  
+  const handleChangeFavorite= (id) => {
+    const index = props.characters.findIndex(character=>character.char_id===id)
+    const character = props.characters[index]
+    character.favorite = !character.favorite
+    props.update(character,index)
+  }
+  
+>>>>>>> develop
   useEffect(() => {
     setCount(props.count);
     setError(null);
