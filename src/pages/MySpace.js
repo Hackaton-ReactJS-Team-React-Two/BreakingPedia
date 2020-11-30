@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, Fragment, useMemo } from "react";
 import { getRandomQuote } from "../api";
-=======
-import React, { useState, useEffect, Fragment } from "react";
->>>>>>> develop
 import { connect } from "react-redux";
 
 import * as charactersActions from "../actions/charactersActions";
@@ -36,20 +32,12 @@ function SearchFavoriteCharacters(characters) {
 }
 
 function MySpace(props) {
-<<<<<<< HEAD
-  const [quote, setQuote] = useState(null);
-  const [error, setError] = useState(null);
-  const [load, setLoad] = useState(false);
-  const [count, setCount] = useState(1);
-  const [visible, setVisible] = useState(true);
+  const [favCharacters, setFavCharacters] = useState([]);
   const {
     query,
     setQuery,
     filteredFavoriteCharacters,
-  } = SearchFavoriteCharacters(props.characters);
-=======
-  const [favCharacters, setFavCharacters] = useState([]);
->>>>>>> develop
+  } = SearchFavoriteCharacters(favCharacters);
 
   useEffect(() => {
     const result = props.characters.filter((character) => {
@@ -58,21 +46,33 @@ function MySpace(props) {
     setFavCharacters(result);
   }, []);
 
-  const handleChangeFavorite= (id) => {
-    const index = props.characters.findIndex(character=>character.char_id===id)
-    const character = props.characters[index]
-    character.favorite = !character.favorite
-    props.update(character,index)
-    const favIndex = favCharacters.findIndex(character=>character.char_id===id)
-    favCharacters.splice(favIndex,1)
-  }
+  const handleChangeFavorite = (id) => {
+    const index = props.characters.findIndex(
+      (character) => character.char_id === id
+    );
+    const character = props.characters[index];
+    character.favorite = !character.favorite;
+    props.update(character, index);
+    const favIndex = favCharacters.findIndex(
+      (character) => character.char_id === id
+    );
+    favCharacters.splice(favIndex, 1);
+  };
 
   return (
     <Fragment>
       <h3 className="search__title my-3">My Space</h3>
-      <SearchInput />
+      <SearchInput
+        value={query}
+        onChange={(e) => {
+          setQuery(e.target.value);
+        }}
+      />
       <div className=" mt-4 mb-5">
-        <CharacterList onChangeFavorite={handleChangeFavorite} characters={favCharacters} />
+        <CharacterList
+          onChangeFavorite={handleChangeFavorite}
+          characters={filteredFavoriteCharacters}
+        />
       </div>
     </Fragment>
   );

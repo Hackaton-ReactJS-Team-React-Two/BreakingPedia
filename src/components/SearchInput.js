@@ -5,18 +5,22 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 function SearchInput(props) {
   return (
     <div className="container">
-      <div className="d-flex justify-content-center">
-        <div className="form-inline d-flex justify-content-center md-form form-sm">
-          <FontAwesomeIcon icon={faSearch} className="fa-lg" color="white" />
-          &nbsp;&nbsp;
+      <div className="row__input">
+        <div className="input-group input-group-lg">
           <input
             type="text"
-            className="form-control form-control-lg"
+            className="form-control"
             placeholder="Search"
             onChange={(e) => {
               props.onChange(e);
             }}
           />
+          <div className="input-group-append">
+            <button className="btn btn-light btn-outline-secondary">
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+            &nbsp;&nbsp;
+          </div>
         </div>
       </div>
     </div>
