@@ -22,12 +22,10 @@ function CharacterDetail(props) {
               className="card-img"
               alt="Character"
             />
-          {
-          props.character.favorite? 
-            <FontAwesomeIcon onClick={props.onChangeFavorite} className="favorite-icon" icon={faStar}/>
-          :
-            <FontAwesomeIcon onClick={props.onChangeFavorite}  className="favorite-icon" icon={["far", "star"]}/>
-          }
+            <FontAwesomeIcon 
+              onClick={props.onChangeFavorite} className="favorite-icon" 
+              icon={props.character.favorite? faStar : ["far", "star"]}
+            />
           </div>
           <div className="col-md-8">
             <div className="card-body">
@@ -54,12 +52,12 @@ function CharacterDetail(props) {
                         </div>
                         <div className="col-md-9 topics__container">
                           <div className="card-body body__topics-jobs">
-                            <h4 className="text__content">Jobs</h4>
+                            <h4 className="text__content text__title">Jobs</h4>
                             <ul>
-                              {props.character.occupation.map((job, id) => {
+                              {props.character.occupation.map((job, id,array) => {
                                 return (
                                   <li key={id}>
-                                    <h6 className="text__content-job">{job}</h6>
+                                    <h6 className="text__content-job">{job}{array.length-1 === id ?"":","}</h6>
                                   </li>
                                 );
                               })}
@@ -72,7 +70,7 @@ function CharacterDetail(props) {
                   <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
-                        <div className="col-md-1 logo__container">
+                        <div className="col-md-3 logo__container">
                           <FontAwesomeIcon
                             icon={faUser}
                             className="logo"
@@ -81,7 +79,7 @@ function CharacterDetail(props) {
                             fixedWidth
                           />
                         </div>
-                        <div className="col-md-11">
+                        <div className="col-md-9">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Portrayed</h4>
                             <h6 className="text__content">
@@ -97,7 +95,7 @@ function CharacterDetail(props) {
                   <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
-                        <div className="col-md-1 logo__container">
+                        <div className="col-md-3 logo__container">
                           <FontAwesomeIcon
                             icon={faBirthdayCake}
                             className="logo"
@@ -106,7 +104,7 @@ function CharacterDetail(props) {
                             fixedWidth
                           />
                         </div>
-                        <div className="col-md-11">
+                        <div className="col-md-9">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Birthday</h4>
                             <h6 className="text__content">
@@ -120,7 +118,7 @@ function CharacterDetail(props) {
                   <div className="col">
                     <div className="card mb-3 detail topics">
                       <div className="row no-gutters row__topic">
-                        <div className="col-md-1 logo__container">
+                        <div className="col-md-3 logo__container">
                           <FontAwesomeIcon
                             icon={faHeart}
                             className="logo"
@@ -128,7 +126,7 @@ function CharacterDetail(props) {
                             alt="Status"
                           />
                         </div>
-                        <div className="col-md-11">
+                        <div className="col-md-9">
                           <div className="card-body body__topics">
                             <h4 className="text__content">Status</h4>
                             <h6 className="text__content">
