@@ -6,7 +6,7 @@ import "./styles/SerchInput.css";
 
 function CommentInput(props) {
   return (
-    <div className="input-group mb-3">
+    <div className="input-group mb-4">
       <input
         id="commentInput"
         onKeyUp={(e) => {
