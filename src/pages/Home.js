@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useMemo } from "react";
 import { getRandomQuote } from "../api";
 import { connect } from "react-redux";
 
@@ -12,6 +12,25 @@ import SearchInput from "../components/SearchInput";
 import PageLoading from "../components/PageLoading";
 import MiniLoader from "../components/MiniLoader";
 
+function SearchCharacters(characters) {
+  const [query, setQuery] = React.useState("");
+  const [filteredCharacters, setFilteredCharacters] = React.useState(
+    characters
+  );
+  console.log("SearchCharacters");
+  useMemo(() => {
+    const lowerQuery = query.toLowerCase();
+    const result = characters.filter((character) => {
+      return (
+        character.name.toLowerCase().includes(lowerQuery) ||
+        character.nickname.toLowerCase().includes(lowerQuery)
+      );
+    });
+    setFilteredCharacters(result);
+  }, [characters, query]);
+
+  return { query, setQuery, filteredCharacters };
+}
 
 function Home(props) {
   const [quote, setQuote] = useState(null);
@@ -19,13 +38,16 @@ function Home(props) {
   const [load, setLoad] = useState(false);
   const [count, setCount] = useState(1);
   const [visible, setVisible] = useState(true);
-  
-  const handleChangeFavorite= (id) => {
-    const character = props.characters[id]
-    character.favorite = !character.favorite
-    props.update(character,id)
-  }
-  
+  const { query, setQuery, filteredCharacters } = SearchCharacters(
+    props.characters
+  );
+
+  const handleChangeFavorite = (id) => {
+    const character = props.characters[id];
+    character.favorite = !character.favorite;
+    props.update(character, id);
+  };
+
   useEffect(() => {
     setCount(props.count);
     setError(null);
@@ -95,10 +117,18 @@ function Home(props) {
       </div>
       <main id="main-home">
         <h3 className="search__title my-3">Search</h3>
-        <SearchInput />
+        <SearchInput
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
+        />
         <div className=" mt-4 mb-5">
-          <CharacterList onChangeFavorite={handleChangeFavorite} characters={props.characters} />
-          {props.load && props.characters?<MiniLoader/>: ""}
+          <CharacterList
+            onChangeFavorite={handleChangeFavorite}
+            characters={filteredCharacters}
+          />
+          {props.load && props.characters ? <MiniLoader /> : ""}
           <button
             onClick={() => {
               setCount(count + 1);

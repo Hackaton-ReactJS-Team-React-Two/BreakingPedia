@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment, useMemo } from "react";
 import { getRandomQuote } from "../api";
 import { connect } from "react-redux";
 
@@ -11,12 +11,37 @@ import SearchInput from "../components/SearchInput";
 import PageLoading from "../components/PageLoading";
 import MiniLoader from "../components/MiniLoader";
 
+function SearchFavoriteCharacters(characters) {
+  const [query, setQuery] = React.useState("");
+  const [
+    filteredFavoriteCharacters,
+    setFilteredFavoriteCharacters,
+  ] = React.useState(characters);
+  useMemo(() => {
+    const lowerQuery = query.toLowerCase();
+    const result = characters.filter((character) => {
+      return (
+        character.name.toLowerCase().includes(lowerQuery) ||
+        character.nickname.toLowerCase().includes(lowerQuery)
+      );
+    });
+    setFilteredFavoriteCharacters(result);
+  }, [characters, query]);
+
+  return { query, setQuery, filteredFavoriteCharacters };
+}
+
 function MySpace(props) {
   const [quote, setQuote] = useState(null);
   const [error, setError] = useState(null);
   const [load, setLoad] = useState(false);
   const [count, setCount] = useState(1);
   const [visible, setVisible] = useState(true);
+  const {
+    query,
+    setQuery,
+    filteredFavoriteCharacters,
+  } = SearchFavoriteCharacters(props.characters);
 
   useEffect(() => {
     setCount(props.count);

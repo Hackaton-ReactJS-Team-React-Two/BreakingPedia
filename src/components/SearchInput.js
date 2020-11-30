@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-function SearchInput() {
+function SearchInput(props) {
   return (
     <div className="container">
       <div className="d-flex justify-content-center">
@@ -12,7 +12,10 @@ function SearchInput() {
           <input
             type="text"
             className="form-control form-control-lg"
-            placeholder="Buscar"
+            placeholder="Search"
+            onChange={(e) => {
+              props.onChange(e);
+            }}
           />
         </div>
       </div>
