@@ -77,8 +77,8 @@ function FooterComp(props) {
                   Subscribe
                 </Button>
               </Form>
-              <Link
-                to="https://hackaton-reactjs-team-react-two.github.io/"
+              <a
+                href="https://github.com/Hackaton-ReactJS-Team-React-Two/"
                 alt="GitHub"
               >
                 <FontAwesomeIcon
@@ -89,7 +89,7 @@ function FooterComp(props) {
                   color="white"
                   icon={faGithubSquare}
                 />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="row">

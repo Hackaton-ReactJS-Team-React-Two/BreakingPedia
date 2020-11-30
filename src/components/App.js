@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import Build from '../pages/Build'
 import Home from '../pages/Home'
 import CharacterDetails from '../pages/CharacterDetails'
 import AboutUs from "../pages/AboutUs";
