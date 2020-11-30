@@ -1,60 +1,91 @@
-import React, { useState, useEffect, Fragment } from "react";
-import { getCharacters, getRandomQuote } from "../api";
+import React, { useState, useEffect, Fragment, useMemo } from "react";
+import { getRandomQuote } from "../api";
+import { connect } from "react-redux";
+
+import * as charactersActions from "../actions/charactersActions";
 
 import BannerHome from "../images/BannerHome.jpg";
 import "./styles/Home.css";
 
 import CharacterList from "../components/CharacterList";
 import SearchInput from "../components/SearchInput";
-import PageLoading from "../components/PageLoading"
-import MiniLoader from "../components/MiniLoader"
+import PageLoading from "../components/PageLoading";
+import MiniLoader from "../components/MiniLoader";
 
-function Home() {
-  const [characters, setCharacters] = useState([]);
+function SearchCharacters(characters) {
+  const [query, setQuery] = React.useState("");
+  const [filteredCharacters, setFilteredCharacters] = React.useState(
+    characters
+  );
+  useMemo(() => {
+    const lowerQuery = query.toLowerCase();
+    const result = characters.filter((character) => {
+      return (
+        character.name.toLowerCase().includes(lowerQuery) ||
+        character.nickname.toLowerCase().includes(lowerQuery)
+      );
+    });
+    setFilteredCharacters(result);
+  }, [characters, query]);
+
+  return { query, setQuery, filteredCharacters };
+}
+
+function Home(props) {
   const [quote, setQuote] = useState(null);
   const [error, setError] = useState(null);
   const [load, setLoad] = useState(false);
   const [count, setCount] = useState(1);
   const [visible, setVisible] = useState(true);
+  const { query, setQuery, filteredCharacters } = SearchCharacters(
+    props.characters
+  );
+
+  const handleChangeFavorite = (id) => {
+    const character = props.characters[id];
+    character.favorite = !character.favorite;
+    props.update(character, id);
+  };
 
   useEffect(() => {
-    setLoad(true);
+    setCount(props.count);
     setError(null);
+    setLoad(true);
     async function fetchData() {
       try {
         const quote = await getRandomQuote();
+        setLoad(false);
         setQuote(quote);
-        setLoad(false);
       } catch (error) {
-        setLoad(false);
         setError(error);
       }
     }
     fetchData();
   }, []);
   useEffect(() => {
-    setLoad(true);
-    setError(null);
     async function fetchData() {
-      try {
-        const data = await getCharacters(count, 8);
-        setCharacters(characters.concat(data));
-        if (characters.length + data.length === 63) {
-          setVisible(false);
-        }
-        setLoad(false);
-      } catch (error) {
-        setLoad(false);
-        setError(error);
+      await props.getAll(count);
+      if (props.characters.length + 7 === 63) {
+        setVisible(false);
       }
     }
-    fetchData();
+    if (props.characters.length === 63) {
+      setVisible(false);
+    } else if (
+      props.characters.length < 8 ||
+      (props.count !== count && count !== 1)
+    ) {
+      fetchData();
+    }
   }, [count]);
+  if (props.error) {
+    return <h1>{props.error.message}</h1>;
+  }
   if (error) {
     return <h1>{error.message}</h1>;
   }
-  if (load && characters.length === 0) {
-    return <PageLoading/>;
+  if (props.load && props.characters.length === 0) {
+    return <PageLoading />;
   }
   return (
     <Fragment>
@@ -63,11 +94,18 @@ function Home() {
         <div className="HeroHome__container">
           <div className="HeroHome__content container m-auto">
             <div className="HeroHome__quote mb-4">
+              {load ? (
+                <div className="spinner-border m-auto">
+                  <span className="sr-only">...Loading</span>
+                </div>
+              ) : (
+                ""
+              )}
               <i className="HerHome__quote-message mb-4">
-                “{quote != null ? quote[0].quote : ""}”
+                {quote ? `“${quote[0].quote}”` : ""}
               </i>
               <div className="HerHome__quote-author">
-                Author: {quote != null ? quote[0].author : ""}
+                {quote ? `Author: ${quote[0].author}` : ""}
               </div>
             </div>
             <a className="btn btn-dark mx-auto d-block" href="#main-home">
@@ -77,11 +115,19 @@ function Home() {
         </div>
       </div>
       <main id="main-home">
-        <h3 className="search__title my-3">Buscar</h3>
-        <SearchInput />
+        <h3 className="search__title my-3">Search</h3>
+        <SearchInput
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+          }}
+        />
         <div className=" mt-4 mb-5">
-          <CharacterList characters={characters} />
-          {load && characters?<MiniLoader/>: ""}
+          <CharacterList
+            onChangeFavorite={handleChangeFavorite}
+            characters={filteredCharacters}
+          />
+          {props.load && props.characters ? <MiniLoader /> : ""}
           <button
             onClick={() => {
               setCount(count + 1);
@@ -98,4 +144,8 @@ function Home() {
   );
 }
 
-export default Home;
+const mapStateToProps = (reducers) => {
+  return reducers.charactersReducer;
+};
+
+export default connect(mapStateToProps, charactersActions)(Home);

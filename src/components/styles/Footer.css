@@ -1,14 +1,9 @@
 .footer{
-    background-color: #161b18 !important;
+    background-color: #1a1d12 !important;
 }
 
 .img_logo{
     width: 150px;
-}
-
-.footer__li{
-    list-style: none;
-    color: antiquewhite;
 }
 
 .form{
@@ -17,14 +12,19 @@
 
 .footer__h6{
     font-weight: 400;
+    color: antiquewhite;
 }
 
-.img_social{
-    width: 18px;
-    filter: invert(100%);
+.logo__foot{
+    margin-left: 10px;
 }
 
-.link_name{
+.list__links{
+    list-style: none;
+    margin-top: 50px;
+}
+
+.links_name{
     color: #ffffff !important;
 }
 
@@ -52,14 +52,13 @@
 
 @media screen and (min-width:500px){
     .img_logo{
-        margin: 20px 150px;
+        margin-top: 20px;
+        margin-left: 140px;
+        margin-bottom: -30px;
     }
-    .footer_ul{
-        margin: -10px;
-    }
-    .footer__li{
-        margin: -5px 0px;
-        margin-left: -20px;
+    .links_name{
+        padding-top: 15px;
+        margin-top: 0px;
         text-align: center;
     }
     .footer__h6{
@@ -67,10 +66,10 @@
         margin-left: 15px;
     }
     .button_subscribe{
-        margin: 10px 190px;
+        margin: 10px 166px;
     }
     .img_social{
-        margin: 10px 35px;
+        margin: 10px 32px;
     }
     .quote{
         margin: 15px;
@@ -78,27 +77,64 @@
 
 }
 
+@media screen and (min-width:680px){
+    .img_logo{
+        margin-top: 30px;
+        margin-left: 0px;
+    }
+    .list__links{
+        margin-top: 25px;
+        margin-left: 0px;
+    }
+    .links_name{
+        padding-top: 10px;
+    }
+    .content__form{
+        margin-left: 85px;
+    }
+    .button_subscribe{
+        margin: 0px;
+    }
+    .img_social{
+        margin-left: 40px;
+    }
+}
+
 @media screen and (min-width:767px){
     .img_logo{
-        margin-top: 60px;
+        margin-top: 30px;
+        margin-left: 0px;
+    }
+    .list__links{
+        margin-top: 30px;
+    }
+    .links_name{
+        padding: 0px;
+        margin: 0px;
     }
     .footer__h6{
         text-align: center;
     }
     .content__form{
-        margin-left: 110px;
+        margin-left: 90px;
+    }
+    .button_subscribe{
+        margin: 0px;
     }
     .img_social{
-        margin: 15px 42px;
+        margin: 15px 37px;
     }
 }
 
 @media screen and (min-width:990px){
+    .list__links{
+        padding: 10px;
+    }
     .button_subscribe{
         margin-top: 10px;
     }
     .img_social{
-        margin: 15px 10px;
+        margin-left: auto;
     }
 }
 
@@ -107,10 +143,13 @@
         margin-left: 60px;
         margin-top: 30px;
     }
-    .footer_ul{
-        margin-top: 8px;
-        margin-left: -30px;
-        margin-bottom: 0px;
+    .list__links{
+        margin-top: 20px;
+        margin-left: -40px;
+    }
+    .links_name{
+        padding-top: 15px;
+        margin: auto;
     }
     .footer__h6{
         text-align: left;

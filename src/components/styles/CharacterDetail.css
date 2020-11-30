@@ -1,104 +1,59 @@
-.body{
-    background-color: #292d00;
-    color: #ffffff;
+.container__card {
+  background-color: #2b2800;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
-.detail{
-    border: none;
-    background-color: #292d00;
-    margin: 10px 20px;
+.img__cont {
+  margin: auto;
 }
 
-.card-body{
-    width: auto;
+.card__img {
+  display: flex;
+  margin: 30px auto;
+  margin-bottom: 20px;
+  width: 260px;
+  border-radius: 20px;
 }
 
-.card-title{
-    margin: 5px 0px;
-    text-align: center;
+.favorite-icon {
+  color: yellow;
+  margin: 20px auto;
+  display: block;
+  transition: transform .2s;
 }
 
-.card-subtitle{
-    text-align: center;
-    margin-bottom: 30px;
+.favorite-icon:hover {
+  transform: scale(1.5);
 }
 
-.card-img{
-    display: block;
-    margin: 40px auto;
-    width: 260px;
-    border-radius: 20px;
+.body__cont {
+  margin: 30px auto;
 }
 
-.logo{
-    display: block;
-    margin: 35px 10px;
-    filter: invert(100%);
-    width: 32px;
+.boxes_container {
+  margin: 15px auto;
 }
 
-.topics{
-    margin: 10px 30px;
-    display: inline-block;
-    width: 330px;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
+.topic__container {
+  width: auto;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 15px;
 }
 
-.body__topics{
-    width: min-content;
-    margin: 0px 30px;
+.card__text {
+  color: #ffffff;
+  text-align: center;
 }
 
-.row__topic{
-    width: min-content;
-    margin: auto;
+.text__content {
+  margin-left: -35px;
+  list-style: none;
 }
 
-@media screen and (min-width:480px){
-    .topics{
-        margin: auto 40px;
-    }
-    .logo{
-        margin: 20px auto;
-        margin-bottom: 0px;
-    }
-    .body__topics{
-        margin-top: -5px;
-        text-align: center;
-    }
-}
-
-@media screen and (min-width:683px){
-    .topics{
-        margin: auto 120px;
-    }
-    .logo{
-        margin: 20px auto;
-        margin-bottom: 0px;
-    }
-    .body__topics{
-        margin-top: -5px;
-        text-align: center;
-    }
-}
-
-@media screen and (min-width:768px){
-    .topics{
-        margin: auto 60px;
-    }
-    .logo{
-        margin: 30px auto;
-        margin-bottom: 5px;
-    }
-}
-
-@media screen and (min-width:1024px){
-    .topics{
-        margin: 10px 20px;
-    }
-    .logo{
-        margin: 30px 10px;
-        margin-right: 20px;
-    }
+.logo__container {
+  margin: auto -40px;
+  margin-left: -30px;
+  text-align: center;
 }

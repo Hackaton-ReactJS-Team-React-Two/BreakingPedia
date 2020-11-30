@@ -1,6 +1,5 @@
 import logo from "../images/logo.svg";
 import "./styles/Build.css";
-import ContactUs from "./ContactUs";
 
 function Build() {
   return (

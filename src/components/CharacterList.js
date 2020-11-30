@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./styles/CharacterList.css";
 
@@ -17,10 +17,11 @@ function CharacterList(props) {
           }
           return (
             <CharacterCard
+              onChangeFavorite={props.onChangeFavorite}
               character={character}
               color={color}
-              favorite={false}
               key={id}
+              id={id}
             />
           );
         })}
