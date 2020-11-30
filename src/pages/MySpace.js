@@ -53,7 +53,9 @@ function MySpace(props) {
     const favIndex = favCharacters.findIndex(
       (character) => character.char_id === id
     );
-    favCharacters.splice(favIndex, 1);
+    const updateCharacters = [...favCharacters]
+    updateCharacters.splice(favIndex,1)
+    setFavCharacters(updateCharacters)
   };
 
   return (

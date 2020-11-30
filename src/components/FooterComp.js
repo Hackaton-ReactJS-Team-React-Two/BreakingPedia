@@ -38,24 +38,26 @@ function FooterComp(props) {
         <div className="container">
           <div className="row">
             <div className="col-sm">
-              <img src={logo} className="img_logo" alt="Logo" />
+              <Link to="/BreakingPedia">
+                <img src={logo} className="img_logo" alt="Logo" />
+              </Link>
             </div>
             <div className="col-sm">
               <div className="container list__links">
                 <div className="row">
                   <div className="col">
-                    <Link to="/">
+                    <Link to="/BreakingPedia">
                       <h6 className="links_name">Home</h6>
                     </Link>
                   </div>
                   <div className="col">
-                    <Link to="/my_space">
+                    <Link to="/BreakingPedia/my_space">
                       <h6 className="links_name">MySpace</h6>
                     </Link>
                   </div>
                   <div className="w-100"></div>
                   <div className="col">
-                    <Link to="/about_us">
+                    <Link to="/BreakingPedia/about_us">
                       <h6 className="links_name">About us</h6>
                     </Link>
                   </div>
