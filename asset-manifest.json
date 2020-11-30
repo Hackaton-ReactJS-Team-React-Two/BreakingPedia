@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/BreakingPedia/static/css/main.36911565.chunk.css",
-    "main.js": "/BreakingPedia/static/js/main.b919d213.chunk.js",
-    "main.js.map": "/BreakingPedia/static/js/main.b919d213.chunk.js.map",
-    "runtime-main.js": "/BreakingPedia/static/js/runtime-main.89521697.js",
-    "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.89521697.js.map",
+    "main.css": "/BreakingPedia/static/css/main.a8f8c13d.chunk.css",
+    "main.js": "/BreakingPedia/static/js/main.57b0ebc3.chunk.js",
+    "main.js.map": "/BreakingPedia/static/js/main.57b0ebc3.chunk.js.map",
+    "runtime-main.js": "/BreakingPedia/static/js/runtime-main.a6413fe2.js",
+    "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.a6413fe2.js.map",
     "static/css/2.43b2b750.chunk.css": "/BreakingPedia/static/css/2.43b2b750.chunk.css",
-    "static/js/2.28bd9140.chunk.js": "/BreakingPedia/static/js/2.28bd9140.chunk.js",
-    "static/js/2.28bd9140.chunk.js.map": "/BreakingPedia/static/js/2.28bd9140.chunk.js.map",
-    "static/js/3.a5c585d9.chunk.js": "/BreakingPedia/static/js/3.a5c585d9.chunk.js",
-    "static/js/3.a5c585d9.chunk.js.map": "/BreakingPedia/static/js/3.a5c585d9.chunk.js.map",
+    "static/js/2.50acc9dd.chunk.js": "/BreakingPedia/static/js/2.50acc9dd.chunk.js",
+    "static/js/2.50acc9dd.chunk.js.map": "/BreakingPedia/static/js/2.50acc9dd.chunk.js.map",
+    "static/js/3.0f9ad65a.chunk.js": "/BreakingPedia/static/js/3.0f9ad65a.chunk.js",
+    "static/js/3.0f9ad65a.chunk.js.map": "/BreakingPedia/static/js/3.0f9ad65a.chunk.js.map",
     "index.html": "/BreakingPedia/index.html",
     "static/css/2.43b2b750.chunk.css.map": "/BreakingPedia/static/css/2.43b2b750.chunk.css.map",
-    "static/css/main.36911565.chunk.css.map": "/BreakingPedia/static/css/main.36911565.chunk.css.map",
-    "static/js/2.28bd9140.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.28bd9140.chunk.js.LICENSE.txt",
+    "static/css/main.a8f8c13d.chunk.css.map": "/BreakingPedia/static/css/main.a8f8c13d.chunk.css.map",
+    "static/js/2.50acc9dd.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.50acc9dd.chunk.js.LICENSE.txt",
     "static/media/BannerContactUs.ab2a9d50.jpg": "/BreakingPedia/static/media/BannerContactUs.ab2a9d50.jpg",
     "static/media/BannerHome.785bd47d.jpg": "/BreakingPedia/static/media/BannerHome.785bd47d.jpg",
     "static/media/Breaking_Bad_5.1c6483ef.png": "/BreakingPedia/static/media/Breaking_Bad_5.1c6483ef.png",
@@ -21,10 +21,10 @@
     "static/media/profile_ferley.30a0d910.jpg": "/BreakingPedia/static/media/profile_ferley.30a0d910.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.89521697.js",
+    "static/js/runtime-main.a6413fe2.js",
     "static/css/2.43b2b750.chunk.css",
-    "static/js/2.28bd9140.chunk.js",
-    "static/css/main.36911565.chunk.css",
-    "static/js/main.b919d213.chunk.js"
+    "static/js/2.50acc9dd.chunk.js",
+    "static/css/main.a8f8c13d.chunk.css",
+    "static/js/main.57b0ebc3.chunk.js"
   ]
 }
