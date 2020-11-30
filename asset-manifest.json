@@ -1,31 +1,30 @@
 {
   "files": {
-    "main.css": "/BreakingPedia/static/css/main.83177a26.chunk.css",
-    "main.js": "/BreakingPedia/static/js/main.246849b9.chunk.js",
-    "main.js.map": "/BreakingPedia/static/js/main.246849b9.chunk.js.map",
+    "main.css": "/BreakingPedia/static/css/main.36911565.chunk.css",
+    "main.js": "/BreakingPedia/static/js/main.257566c8.chunk.js",
+    "main.js.map": "/BreakingPedia/static/js/main.257566c8.chunk.js.map",
     "runtime-main.js": "/BreakingPedia/static/js/runtime-main.89521697.js",
     "runtime-main.js.map": "/BreakingPedia/static/js/runtime-main.89521697.js.map",
     "static/css/2.43b2b750.chunk.css": "/BreakingPedia/static/css/2.43b2b750.chunk.css",
-    "static/js/2.2f60096f.chunk.js": "/BreakingPedia/static/js/2.2f60096f.chunk.js",
-    "static/js/2.2f60096f.chunk.js.map": "/BreakingPedia/static/js/2.2f60096f.chunk.js.map",
+    "static/js/2.28bd9140.chunk.js": "/BreakingPedia/static/js/2.28bd9140.chunk.js",
+    "static/js/2.28bd9140.chunk.js.map": "/BreakingPedia/static/js/2.28bd9140.chunk.js.map",
     "static/js/3.a5c585d9.chunk.js": "/BreakingPedia/static/js/3.a5c585d9.chunk.js",
     "static/js/3.a5c585d9.chunk.js.map": "/BreakingPedia/static/js/3.a5c585d9.chunk.js.map",
     "index.html": "/BreakingPedia/index.html",
     "static/css/2.43b2b750.chunk.css.map": "/BreakingPedia/static/css/2.43b2b750.chunk.css.map",
-    "static/css/main.83177a26.chunk.css.map": "/BreakingPedia/static/css/main.83177a26.chunk.css.map",
-    "static/js/2.2f60096f.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.2f60096f.chunk.js.LICENSE.txt",
+    "static/css/main.36911565.chunk.css.map": "/BreakingPedia/static/css/main.36911565.chunk.css.map",
+    "static/js/2.28bd9140.chunk.js.LICENSE.txt": "/BreakingPedia/static/js/2.28bd9140.chunk.js.LICENSE.txt",
     "static/media/BannerContactUs.ab2a9d50.jpg": "/BreakingPedia/static/media/BannerContactUs.ab2a9d50.jpg",
     "static/media/BannerHome.785bd47d.jpg": "/BreakingPedia/static/media/BannerHome.785bd47d.jpg",
     "static/media/Breaking_Bad_5.1c6483ef.png": "/BreakingPedia/static/media/Breaking_Bad_5.1c6483ef.png",
     "static/media/LogoGreen.53d03b8e.png": "/BreakingPedia/static/media/LogoGreen.53d03b8e.png",
-    "static/media/logo.103b5fa1.svg": "/BreakingPedia/static/media/logo.103b5fa1.svg",
     "static/media/profile_ferley.30a0d910.jpg": "/BreakingPedia/static/media/profile_ferley.30a0d910.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.89521697.js",
     "static/css/2.43b2b750.chunk.css",
-    "static/js/2.2f60096f.chunk.js",
-    "static/css/main.83177a26.chunk.css",
-    "static/js/main.246849b9.chunk.js"
+    "static/js/2.28bd9140.chunk.js",
+    "static/css/main.36911565.chunk.css",
+    "static/js/main.257566c8.chunk.js"
   ]
 }
