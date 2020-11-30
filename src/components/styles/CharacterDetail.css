@@ -1,3 +1,9 @@
+.favorite-icon {
+  color: yellow;
+  font-size: 40px;
+  margin: 0 auto;
+  display: block;
+}
 .container__detail {
   margin-top: 10px;
   margin-bottom: 40px;
@@ -15,6 +21,7 @@
   color: #ffffff;
   margin: auto;
   margin-left: -40px;
+  justify-content: center;
 }
 
 .card-body {
@@ -32,15 +39,27 @@
 }
 
 .card-img {
-  display: block;
-  margin: 40px auto;
+  display: flex;
+  margin: 40px auto 20px;
   width: 260px;
   border-radius: 20px;
+}
+
+.cont-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {
   margin: 30px auto !important;
   filter: invert(100%);
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  height: min-content;
 }
 
 .topics {
@@ -51,28 +70,22 @@
 }
 
 .body__topics {
-  border: 1px solid springgreen;
-  text-align: center;
+  justify-content: center;
   width: max-content;
-  margin-top: 5px !important;
-  margin: auto 45px;
+  margin: 0 auto;
 }
 
 .body__topics-jobs{
-  border: 1px solid springgreen;
-  text-align: center;
   width: max-content;
+  margin: 0 auto;
 }
-
-.row__topic {
-  width: min-content;
-  margin: auto;
+.row__topic{
+  padding: 0 20px;
 }
 
 @media screen and (min-width: 480px) {
   .logo__container{
     text-align: center;
-    margin-bottom: -25px;
   }
 }
 
