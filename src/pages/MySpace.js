@@ -15,7 +15,7 @@ function SearchFavoriteCharacters(characters) {
     setFilteredFavoriteCharacters,
   ] = React.useState(characters);
   useMemo(() => {
-    const lowerQuery = query.toLowerCase();
+    const lowerQuery = query.toLowerCase().trim();
     const result = characters.filter((character) => {
       return (
         character.name.toLowerCase().includes(lowerQuery) ||
